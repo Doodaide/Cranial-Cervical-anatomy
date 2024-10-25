@@ -1,0 +1,58 @@
+body {
+  display: flex;
+  flex-direction: column; /* Stack title and canvas vertically */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0; /* Light background for contrast */
+}
+
+.title-box {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px; /* Space between title and canvas */
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin: 0; /* Remove default margin */
+}
+
+.container {
+  display: flex; /* Use flexbox to arrange items horizontally */
+  align-items: center; /* Center items vertically */
+  width: 80vw; /* Responsive width */
+  height: 80vh; /* Responsive height */
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  cursor: grab; /* Change cursor for dragging */
+}
+
+.menu {
+  margin-left: 20px; /* Add some space between the canvas and the menu */
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Arrange checkboxes vertically */
+}
+
+.menu label {
+  display: flex; /* Use flex to align checkbox and text */
+  align-items: center; /* Center items vertically */
+  width: 180px; /* Set a fixed width for all labels */
+}
+
+.menu label input {
+  margin-right: 10px; /* Space between checkbox and label */
+}
