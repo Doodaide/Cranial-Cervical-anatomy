@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facial muscles and infrahyoid muscles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="title-box">
+        <h1>Facial Muscles (expression) and Infrahyoid Muscles</h1>
+        <p>by Alex He</p>
+    </div>
+    <div class="container">
+        <canvas id="canvas"></canvas>
+        <div class="menu">
+            <h3>Toggle Layers</h3>
+            <label><input type="checkbox" onchange="toggleLayer(19, this.checked)"> Bones</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(20, this.checked)"> Thyroid Cartilage</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(21, this.checked)"> Corrugator Supercilii</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(22, this.checked)"> Orbicularis Oculi</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(23, this.checked)"> Frontal belly of occipitofrontalis</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(24, this.checked)"> Procerus</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(25, this.checked)"> Levator Anguli Oris</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(26, this.checked)"> Levator Labii Superioris</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(27, this.checked)"> Levator Labii Superioris Alaeque Nasi</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(41, this.checked)"> Platysma</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(28, this.checked)"> Mentalis</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(29, this.checked)"> Orbicularis Oris</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(30, this.checked)"> Buccinator</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(31, this.checked)"> Zygomaticus minor</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(32, this.checked)"> Zygomaticus major</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(33, this.checked)"> Nasalis</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(34, this.checked)"> Risorius</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(35, this.checked)"> Depressor labii Inferioris</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(36, this.checked)"> Depressor Anguli oris</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(37, this.checked)"> Thyrohyoid muscle</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(38, this.checked)"> Sternothyroid muscle</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(39, this.checked)"> Sternohyoid muscle</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(40, this.checked)"> Omohyoid muscle</label><br>
+            <!-- Add more checkboxes for additional layers -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

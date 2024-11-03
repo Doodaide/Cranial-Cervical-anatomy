@@ -1,8 +1,9 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const images = [];
-const layersVisible = [true, false, false]; // Only Layer 1 is visible by default
+const layersVisible = [false, false]; // Only Layer 1 is visible by default
 const imageSources = [
+    // skull 
     'nerve_images/skull_.png', 
     'nerve_images/Skull Labels_.png', 
     'nerve_images/PTF_.png',
@@ -21,8 +22,33 @@ const imageSources = [
     'nerve_images/Maxillary_.png', 
     'nerve_images/Maxillary nerve labels_.png',
     'nerve_images/Ophthalmic_.png',
-    'nerve_images/Ophthalmic labels_.png'
-]; // Add your image paths here
+    'nerve_images/Ophthalmic labels_.png',
+
+    'facial_muscle_images/Skull.png',// 19
+    'facial_muscle_images/Thyroid  cartilage.png',
+    'facial_muscle_images/corrugator supercilii.png',
+    'facial_muscle_images/orbicularis oculi.png',
+    'facial_muscle_images/frontalis.png',
+    'facial_muscle_images/Procerus.png',
+    'facial_muscle_images/levator Anguli oris.png',
+    'facial_muscle_images/Levator labii superioris.png',
+    'facial_muscle_images/Levator labii superioris alaeque nasi.png',
+    'facial_muscle_images/Mentalis.png',
+    'facial_muscle_images/Orbicularis oris.png',
+    'facial_muscle_images/Buccinator.png',
+    'facial_muscle_images/Zygomaticus minor.png',
+    'facial_muscle_images/zygomaticus major.png',
+    'facial_muscle_images/Nasalis .png',
+    'facial_muscle_images/Risorius.png',
+    'facial_muscle_images/Depressor Labii inferioris.png',
+    'facial_muscle_images/Depressor anguli oris.png',
+    'facial_muscle_images/Thyrohyoid muscle.png',
+    'facial_muscle_images/Sternothyroid .png',
+    'facial_muscle_images/Sternohyoid.png',
+    'facial_muscle_images/Omohyoid.png',
+    'facial_muscle_images/Platysma.png'
+    //42
+]; 
 
 let scale = 1;
 let originX = 0;
