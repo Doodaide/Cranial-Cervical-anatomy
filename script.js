@@ -3,25 +3,25 @@ const ctx = canvas.getContext('2d');
 const images = [];
 const layersVisible = [true, false, false]; // Only Layer 1 is visible by default
 const imageSources = [
-    'images/skull_.png', 
-    'images/Skull Labels_.png', 
-    'images/PTF_.png',
-    'images/Facial Nerve_.png',
-    'images/Facial nerve labels_.png',
-    'images/Cutaneous facial_.png',
-    'images/Cutaneous facial nerve labels_.png',
-    'images/Trigeminal Nerve_.png',
-    'images/Vagus_.png',
-    'images/Vagus nerve labels_.png',
-    'images/Glossopharyngeal_.png', 
-    'images/Glossopharyngeal labels_.png',
-    'images/Oculomotor _.png',
-    'images/Mandibular nerve_.png',
-    'images/Mandibular nerve labels_.png',
-    'images/Maxillary_.png', 
-    'images/Maxillary nerve labels_.png',
-    'images/Ophthalmic_.png',
-    'images/Ophthalmic labels_.png'
+    'nerve_images/skull_.png', 
+    'nerve_images/Skull Labels_.png', 
+    'nerve_images/PTF_.png',
+    'nerve_images/Facial Nerve_.png',
+    'nerve_images/Facial nerve labels_.png',
+    'nerve_images/Cutaneous facial_.png',
+    'nerve_images/Cutaneous facial nerve labels_.png',
+    'nerve_images/Trigeminal Nerve_.png',
+    'nerve_images/Vagus_.png',
+    'nerve_images/Vagus nerve labels_.png',
+    'nerve_images/Glossopharyngeal_.png', 
+    'nerve_images/Glossopharyngeal labels_.png',
+    'nerve_images/Oculomotor _.png',
+    'nerve_images/Mandibular nerve_.png',
+    'nerve_images/Mandibular nerve labels_.png',
+    'nerve_images/Maxillary_.png', 
+    'nerve_images/Maxillary nerve labels_.png',
+    'nerve_images/Ophthalmic_.png',
+    'nerve_images/Ophthalmic labels_.png'
 ]; // Add your image paths here
 
 let scale = 1;
