@@ -19,6 +19,8 @@
         <canvas id="canvas"></canvas>
         <div class="menu">
             <h3>Toggle Layers</h3>
+            <button onclick="selectAllLayers(true)">Select All</button>
+            <button onclick="selectAllLayers(false)">Deselect All</button>
             <label><input type="checkbox" onchange="toggleLayer(19, this.checked)"> Bones</label><br>
             <label><input type="checkbox" onchange="toggleLayer(20, this.checked)"> Thyroid Cartilage</label><br>
             <label><input type="checkbox" onchange="toggleLayer(21, this.checked)"> Corrugator Supercilii</label><br>

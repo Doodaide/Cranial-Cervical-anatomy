@@ -1,9 +1,12 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const images = [];
-const layersVisible = [false, false]; // Only Layer 1 is visible by default
-const imageSources = [
-    // skull 
+
+// Separate layer visibility arrays for nerves and facial muscles pages
+const nervesLayersVisible = Array(19).fill(false); // Set default visibility for nerves layers
+const musclesLayersVisible = Array(24).fill(false); // Set default visibility for facial muscles layers
+
+const nervesSources = [
     'nerve_images/skull_.png', 
     'nerve_images/Skull Labels_.png', 
     'nerve_images/PTF_.png',
@@ -22,9 +25,11 @@ const imageSources = [
     'nerve_images/Maxillary_.png', 
     'nerve_images/Maxillary nerve labels_.png',
     'nerve_images/Ophthalmic_.png',
-    'nerve_images/Ophthalmic labels_.png',
+    'nerve_images/Ophthalmic labels_.png'
+];
 
-    'facial_muscle_images/Skull.png',// 19
+const musclesSources = [
+    'facial_muscle_images/Skull.png',
     'facial_muscle_images/Thyroid  cartilage.png',
     'facial_muscle_images/corrugator supercilii.png',
     'facial_muscle_images/orbicularis oculi.png',
@@ -47,8 +52,7 @@ const imageSources = [
     'facial_muscle_images/Sternohyoid.png',
     'facial_muscle_images/Omohyoid.png',
     'facial_muscle_images/Platysma.png'
-    //42
-]; 
+];
 
 let scale = 1;
 let originX = 0;
@@ -60,7 +64,22 @@ let lastY;
 canvas.width = window.innerWidth * 0.8; // Set canvas width
 canvas.height = window.innerHeight * 0.8; // Set canvas height
 
-// Load images
+// Determine the active page based on a condition (e.g., URL or title)
+const isNervesPage = document.title.includes("Nerves of the Skull");
+const layersVisible = isNervesPage ? nervesLayersVisible : musclesLayersVisible;
+const imageSources = isNervesPage ? nervesSources : musclesSources;
+
+// Select or deselect all layers for the current page
+function selectAllLayers(select) {
+    const checkboxes = document.querySelectorAll('.menu input[type="checkbox"]');
+    checkboxes.forEach((checkbox, index) => {
+        checkbox.checked = select; // Set checkbox state
+        layersVisible[index] = select; // Update visibility state
+    });
+    draw(); // Redraw canvas to reflect changes
+}
+
+// Load images for the current page
 function loadImages() {
     imageSources.forEach((src, index) => {
         const img = new Image();
@@ -77,7 +96,7 @@ function loadImages() {
     });
 }
 
-// Draw the images on the canvas
+// Draw the images on the canvas based on the current layer visibility
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     images.forEach((img, index) => {
@@ -87,7 +106,7 @@ function draw() {
     });
 }
 
-// Toggle layer visibility
+// Toggle layer visibility for the current page
 function toggleLayer(index, isChecked) {
     layersVisible[index] = isChecked;
     draw();

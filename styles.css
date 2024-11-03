@@ -80,7 +80,21 @@ canvas {
 .menu label input {
   margin-right: 10px;
 }
+/* Styling for Select All / Deselect All buttons */
+.menu button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px; /* Add space below each button */
+  background-color: #094260;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
+.menu button:hover {
+  background-color: #176088;
+}
 
 
 .title-box {
