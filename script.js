@@ -52,7 +52,6 @@ const musclesSources = [
     'facial_muscle_images/Sternothyroid .png',
     'facial_muscle_images/Sternohyoid.png',
     'facial_muscle_images/Omohyoid.png',
-    
 ];
 
 let scale = 1;
