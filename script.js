@@ -38,6 +38,7 @@ const musclesSources = [
     'facial_muscle_images/levator Anguli oris.png',
     'facial_muscle_images/Levator labii superioris.png',
     'facial_muscle_images/Levator labii superioris alaeque nasi.png',
+    'facial_muscle_images/Platysma.png',
     'facial_muscle_images/Mentalis.png',
     'facial_muscle_images/Orbicularis oris.png',
     'facial_muscle_images/Buccinator.png',
@@ -51,7 +52,7 @@ const musclesSources = [
     'facial_muscle_images/Sternothyroid .png',
     'facial_muscle_images/Sternohyoid.png',
     'facial_muscle_images/Omohyoid.png',
-    'facial_muscle_images/Platysma.png'
+    
 ];
 
 let scale = 1;
