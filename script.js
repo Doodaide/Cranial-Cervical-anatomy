@@ -1,10 +1,17 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const images = [];
+let scale = 1;
+let originX = 0;
+let originY = 0;
+let isDragging = false;
+let lastX;
+let lastY;
 
-// Separate layer visibility arrays for nerves and facial muscles pages
-const nervesLayersVisible = Array(19).fill(false); // Set default visibility for nerves layers
-const musclesLayersVisible = Array(24).fill(false); // Set default visibility for facial muscles layers
+
+canvas.width = window.innerWidth * 0.8; // Set canvas width
+canvas.height = window.innerHeight * 0.8; // Set canvas height
+
 
 const nervesSources = [
     'nerve_images/skull_.png', 
@@ -55,30 +62,51 @@ const musclesSources = [
     'facial_muscle_images/Omohyoid.png',
 ];
 
-let scale = 1;
-let originX = 0;
-let originY = 0;
-let isDragging = false;
-let lastX;
-let lastY;
+const arterySources = [
+    'arteries_images/Subclavian_and_branches.png', 
+    'arteries_images/Bones.png',
+    'arteries_images/Common_Carotid.png',
+    'arteries_images/Ext_carotid_and_branches.png',
+    'arteries_images/Superior_Thyroid.png',
+    'arteries_images/Lingual_Artery.png',
+    'arteries_images/Facial_Artery.png',
+    'arteries_images/superficial_temporal.png',
+    'arteries_images/Maxillary.png',
+    'arteries_images/Posterior.png',
+    'arteries_images/Asc_pharyngeal.png',
+]
 
-canvas.width = window.innerWidth * 0.8; // Set canvas width
-canvas.height = window.innerHeight * 0.8; // Set canvas height
+// Dictionary to store sources and visibility states for each page
+const pageData = {
+    "Nerves of the Skull": {
+        sources: nervesSources,
+        visibility: Array(19).fill(false) // Adjust length as needed
+    },
+    "Facial muscles and infrahyoid muscles": {
+        sources: musclesSources,
+        visibility: Array(24).fill(false) // Adjust length as needed
+    },
+    "Arteries": {
+        sources: arterySources,
+        visibility: Array(11).fill(false) // Adjust length as needed
+    }
+};
 
-// Determine the active page based on a condition (e.g., URL or title)
-const isNervesPage = document.title.includes("Nerves of the Skull");
-const layersVisible = isNervesPage ? nervesLayersVisible : musclesLayersVisible;
-const imageSources = isNervesPage ? nervesSources : musclesSources;
+// Identify the current page and get corresponding data
+const pageTitle = document.title;
+const { sources: imageSources, visibility: layersVisible } = pageData[pageTitle];
 
-// Select or deselect all layers for the current page
+
+// Function to select or deselect all layers for the current page
 function selectAllLayers(select) {
     const checkboxes = document.querySelectorAll('.menu input[type="checkbox"]');
     checkboxes.forEach((checkbox, index) => {
-        checkbox.checked = select; // Set checkbox state
-        layersVisible[index] = select; // Update visibility state
+        checkbox.checked = select;
+        layersVisible[index] = select;
     });
-    draw(); // Redraw canvas to reflect changes
+    draw();
 }
+
 
 // Load images for the current page
 function loadImages() {
@@ -88,16 +116,15 @@ function loadImages() {
         img.onload = () => {
             images[index] = img;
             if (index === 0) {
-                // Set initial scale to fit the first image vertically
                 scale = canvas.height / img.height;
-                originX = (canvas.width - img.width * scale) / 2; // Center the image horizontally
+                originX = (canvas.width - img.width * scale) / 2;
             }
             draw();
         };
     });
 }
 
-// Draw the images on the canvas based on the current layer visibility
+// Draw images based on current layer visibility
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     images.forEach((img, index) => {
@@ -107,31 +134,30 @@ function draw() {
     });
 }
 
-// Toggle layer visibility for the current page
+// Toggle individual layer visibility
 function toggleLayer(index, isChecked) {
     layersVisible[index] = isChecked;
     draw();
 }
 
-// Zoom in and out with mouse wheel
+// Zoom and pan functionality
 canvas.addEventListener('wheel', (e) => {
     e.preventDefault();
     scale += e.deltaY > 0 ? -0.1 : 0.1;
-    scale = Math.max(scale, 0.1); // Prevent scaling below 10%
+    scale = Math.max(scale, 0.1);
     draw();
 });
 
-// Mouse down, up, and move for dragging
 canvas.addEventListener('mousedown', (e) => {
     isDragging = true;
     lastX = e.offsetX;
     lastY = e.offsetY;
-    canvas.style.cursor = 'grabbing'; // Change cursor
+    canvas.style.cursor = 'grabbing';
 });
 
 canvas.addEventListener('mouseup', () => {
     isDragging = false;
-    canvas.style.cursor = 'grab'; // Reset cursor
+    canvas.style.cursor = 'grab';
 });
 
 canvas.addEventListener('mousemove', (e) => {
