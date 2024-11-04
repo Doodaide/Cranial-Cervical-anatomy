@@ -29,17 +29,18 @@ const nervesSources = [
 ];
 
 const musclesSources = [
-    'facial_muscle_images/Skull.png',
-    'facial_muscle_images/Thyroid  cartilage.png',
-    'facial_muscle_images/corrugator supercilii.png',
-    'facial_muscle_images/orbicularis oculi.png',
-    'facial_muscle_images/frontalis.png',
-    'facial_muscle_images/Procerus.png',
-    'facial_muscle_images/levator Anguli oris.png',
-    'facial_muscle_images/Levator labii superioris.png',
-    'facial_muscle_images/Levator labii superioris alaeque nasi.png',
-    'facial_muscle_images/Platysma.png',
-    'facial_muscle_images/Mentalis.png',
+    'facial_muscle_images/Skull.png', //0
+    'facial_muscle_images/Thyroid  cartilage.png', //1
+    'facial_muscle_images/corrugator supercilii.png', //2
+    'facial_muscle_images/orbicularis oculi.png', // 3
+    'facial_muscle_images/frontalis.png', // 4
+    'facial_muscle_images/Procerus.png', // 5
+    'facial_muscle_images/levator Anguli oris.png', // 6
+    'facial_muscle_images/Levator labii superioris.png', // 7
+    'facial_muscle_images/Levator labii superioris alaeque nasi.png', //8 
+    
+    'facial_muscle_images/Platysma.png', // 9
+    'facial_muscle_images/Mentalis.png', // 10
     'facial_muscle_images/Orbicularis oris.png',
     'facial_muscle_images/Buccinator.png',
     'facial_muscle_images/Zygomaticus minor.png',
