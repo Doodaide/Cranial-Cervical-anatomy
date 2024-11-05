@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="carousel_styles.css"> <!-- Link to your CSS -->
+    <title>Image Carousel</title>
+</head>
+<body>
+    <div class="navigation">
+        <button onclick="location.href='index.html'">Back to Homepage</button>
+        <span class="breadcrumb">Homepage / Legacy lab doodles</span>
+    </div>
+    <div class="title-box">
+        <h1>Some lab diagrams I drew</h1>
+        <p>by Alex He</p>
+    </div>
+
+    <div class="carousel-container">
+        <div class="carousel">
+            <img id="carousel-image" src="legacy_lab_doodles/i1.png" alt="Image" />
+            <p id="carousel-caption">Image 1 Caption</p>
+        </div>
+    </div>
+
+    <div class="carousel-buttons">
+        <button id="prev-btn">Prev</button>
+        <button id="next-btn">Next</button>
+    </div>
+
+    <script src="carousel.js"></script> <!-- Link to your JavaScript -->
+</body>
+</html>
