@@ -1,3 +1,9 @@
+/* Reset default margins and padding for html and body */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 /* General body styling for centered alignment */
 body {
   display: flex;
@@ -128,6 +134,10 @@ button {
   background-color: #094260;
   color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensures the navigation is on top */
 }
 
 .navigation button {
