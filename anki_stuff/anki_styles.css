@@ -1,0 +1,97 @@
+/* General styling */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+/* Title box styling */
+.title-box {
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrollable deck container styling */
+.deck-container {
+    width: 90vw;
+    max-width: 800px;
+    max-height: 60vh;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.deck-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.deck-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #094260;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.deck-item button {
+    background-color: #176088;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.deck-item button:hover {
+    background-color: #0a5c7b;
+}
+
+/* Modal styling for Anki viewer */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}

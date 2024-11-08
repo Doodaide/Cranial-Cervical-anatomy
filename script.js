@@ -14,78 +14,78 @@ canvas.height = window.innerHeight * 0.8; // Set canvas height
 
 
 const nervesSources = [
-    'nerve_images/skull_.png', 
-    'nerve_images/Skull Labels_.png', 
-    'nerve_images/PTF_.png',
-    'nerve_images/Facial Nerve_.png',
-    'nerve_images/Facial nerve labels_.png',
-    'nerve_images/Cutaneous facial_.png',
-    'nerve_images/Cutaneous facial nerve labels_.png',
-    'nerve_images/Trigeminal Nerve_.png',
-    'nerve_images/Vagus_.png',
-    'nerve_images/Vagus nerve labels_.png',
-    'nerve_images/Glossopharyngeal_.png', 
-    'nerve_images/Glossopharyngeal labels_.png',
-    'nerve_images/Oculomotor _.png',
-    'nerve_images/Mandibular nerve_.png',
-    'nerve_images/Mandibular nerve labels_.png',
-    'nerve_images/Maxillary_.png', 
-    'nerve_images/Maxillary nerve labels_.png',
-    'nerve_images/Ophthalmic_.png',
-    'nerve_images/Ophthalmic labels_.png'
+    'images/nerve_images/skull_.png', 
+    'images/nerve_images/Skull Labels_.png', 
+    'images/nerve_images/PTF_.png',
+    'images/nerve_images/Facial Nerve_.png',
+    'images/nerve_images/Facial nerve labels_.png',
+    'images/nerve_images/Cutaneous facial_.png',
+    'images/nerve_images/Cutaneous facial nerve labels_.png',
+    'images/nerve_images/Trigeminal Nerve_.png',
+    'images/nerve_images/Vagus_.png',
+    'images/nerve_images/Vagus nerve labels_.png',
+    'images/nerve_images/Glossopharyngeal_.png', 
+    'images/nerve_images/Glossopharyngeal labels_.png',
+    'images/nerve_images/Oculomotor _.png',
+    'images/nerve_images/Mandibular nerve_.png',
+    'images/nerve_images/Mandibular nerve labels_.png',
+    'images/nerve_images/Maxillary_.png', 
+    'images/nerve_images/Maxillary nerve labels_.png',
+    'images/nerve_images/Ophthalmic_.png',
+    'images/nerve_images/Ophthalmic labels_.png'
 ];
 
 const musclesSources = [
-    'facial_muscle_images/Skull.png', //0
-    'facial_muscle_images/Thyroid  cartilage.png', //1
-    'facial_muscle_images/corrugator supercilii.png', //2
-    'facial_muscle_images/orbicularis oculi.png', // 3
-    'facial_muscle_images/frontalis.png', // 4
-    'facial_muscle_images/Procerus.png', // 5
-    'facial_muscle_images/levator Anguli oris.png', // 6
-    'facial_muscle_images/Levator labii superioris.png', // 7
-    'facial_muscle_images/Levator labii superioris alaeque nasi.png', //8 
+    'images/facial_muscle_images/Skull.png', //0
+    'images/facial_muscle_images/Thyroid  cartilage.png', //1
+    'images/facial_muscle_images/corrugator supercilii.png', //2
+    'images/facial_muscle_images/orbicularis oculi.png', // 3
+    'images/facial_muscle_images/frontalis.png', // 4
+    'images/facial_muscle_images/Procerus.png', // 5
+    'images/facial_muscle_images/levator Anguli oris.png', // 6
+    'images/facial_muscle_images/Levator labii superioris.png', // 7
+    'images/facial_muscle_images/Levator labii superioris alaeque nasi.png', //8 
     
-    'facial_muscle_images/Platysma.png', // 9
-    'facial_muscle_images/Mentalis.png', // 10
-    'facial_muscle_images/Orbicularis oris.png',
-    'facial_muscle_images/Buccinator.png',
-    'facial_muscle_images/Zygomaticus minor.png',
-    'facial_muscle_images/zygomaticus major.png',
-    'facial_muscle_images/Nasalis .png',
-    'facial_muscle_images/Risorius.png',
-    'facial_muscle_images/Depressor Labii inferioris.png',
-    'facial_muscle_images/Depressor anguli oris.png',
-    'facial_muscle_images/Thyrohyoid muscle.png',
-    'facial_muscle_images/Sternothyroid .png',
-    'facial_muscle_images/Sternohyoid.png',
-    'facial_muscle_images/Omohyoid.png',
+    'images/facial_muscle_images/Platysma.png', // 9
+    'images/facial_muscle_images/Mentalis.png', // 10
+    'images/facial_muscle_images/Orbicularis oris.png',
+    'images/facial_muscle_images/Buccinator.png',
+    'images/facial_muscle_images/Zygomaticus minor.png',
+    'images/facial_muscle_images/zygomaticus major.png',
+    'images/facial_muscle_images/Nasalis .png',
+    'images/facial_muscle_images/Risorius.png',
+    'images/facial_muscle_images/Depressor Labii inferioris.png',
+    'images/facial_muscle_images/Depressor anguli oris.png',
+    'images/facial_muscle_images/Thyrohyoid muscle.png',
+    'images/facial_muscle_images/Sternothyroid .png',
+    'images/facial_muscle_images/Sternohyoid.png',
+    'images/facial_muscle_images/Omohyoid.png',
 ];
 
 const arterySources = [
-    'arteries_images/Subclavian_and_branches.png', 
-    'arteries_images/Bones.png',
-    'arteries_images/Common_Carotid.png',
-    'arteries_images/Ext_carotid_and_branches.png',
-    'arteries_images/Superior_Thyroid.png',
-    'arteries_images/Lingual_Artery.png',
-    'arteries_images/Facial_Artery.png',
-    'arteries_images/superficial_temporal.png',
-    'arteries_images/Maxillary.png',
-    'arteries_images/Posterior.png',
-    'arteries_images/Asc_pharyngeal.png',
+    'images/arteries_images/Subclavian_and_branches.png', 
+    'images/arteries_images/Bones.png',
+    'images/arteries_images/Common_Carotid.png',
+    'images/arteries_images/Ext_carotid_and_branches.png',
+    'images/arteries_images/Superior_Thyroid.png',
+    'images/arteries_images/Lingual_Artery.png',
+    'images/arteries_images/Facial_Artery.png',
+    'images/arteries_images/superficial_temporal.png',
+    'images/arteries_images/Maxillary.png',
+    'images/arteries_images/Posterior.png',
+    'images/arteries_images/Asc_pharyngeal.png',
 ]
 
 const vertsSources = [
-    'vertebrae_images/bone_labels.png', 
-    'vertebrae_images/Bones.png', 
-    'vertebrae_images/key_arteries.png', 
-    'vertebrae_images/Longus_capitis.png', 
-    'vertebrae_images/Longus_colli.png', 
-    'vertebrae_images/Rectus_muscles.png',
-    'vertebrae_images/S_ant.png', 
-    'vertebrae_images/S_med.png', 
-    'vertebrae_images/S_post.png',
+    'images/vertebrae_images/bone_labels.png', 
+    'images/vertebrae_images/Bones.png', 
+    'images/vertebrae_images/key_arteries.png', 
+    'images/vertebrae_images/Longus_capitis.png', 
+    'images/vertebrae_images/Longus_colli.png', 
+    'images/vertebrae_images/Rectus_muscles.png',
+    'images/vertebrae_images/S_ant.png', 
+    'images/vertebrae_images/S_med.png', 
+    'images/vertebrae_images/S_post.png',
 ]
 
 // Dictionary to store sources and visibility states for each page

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anki Decks</title>
+    <link rel="stylesheet" href="anki_styles.css">
+</head>
+<body>
+    <div class="title-box">
+        <h1>Anki Decks</h1>
+        <p>Select a deck to download. Keep in mind there may be spelling errors in these cards because I am careless haha.</p>
+    </div>
+    
+    <div class="deck-container">
+        <div class="deck-list">
+
+            <div class="deck-item" id="deck1">
+                <p>Skull, foramina, and meninges/folds</p>
+                <button onclick="downloadDeck('decks/deck1.apkg')">Download</button>
+            </div>
+
+            <div class="deck-item" id="deck2">
+                <p>Blood vessels of the Head and Neck</p>
+                <button onclick="downloadDeck('decks/deck2.apkg')">Download</button>
+            </div>
+
+            <div class="deck-item" id="deck2">
+                <p>Autonomics, intro to Cranial Nerves, and Lymphatics</p>
+                <button onclick="downloadDeck('decks/deck3.apkg')">Download</button>
+            </div>
+
+            <div class="deck-item" id="deck2">
+                <p>Neck features</p>
+                <button onclick="downloadDeck('decks/deck4.apkg')">Download</button>
+            </div>
+
+            <div class="deck-item" id="deck2">
+                <p>Muscles of Facial expression, Parotid gland, and Facial nerve</p>
+                <button onclick="downloadDeck('decks/deck4.apkg')">Download</button>
+            </div>
+
+            <div class="deck-item" id="deck2">
+                <p>Temporomandibular Joint, Muscles of Mastication, and Mandibular nerve</p>
+                <button onclick="downloadDeck('decks/deck6.apkg')">Download</button>
+            </div>
+
+            <div class="deck-item" id="deck2">
+                <p>Ear and Vestibulocochlear nerve</p>
+                <button onclick="downloadDeck('decks/deck7.apkg')">Download</button>
+            </div>
+
+            <div class="deck-item" id="deck2">
+                <p>The eye and associated cranial nerves</p>
+                <button onclick="downloadDeck('decks/deck8.apkg')">Download</button>
+            </div>
+
+            <div class="deck-item" id="deck2">
+                <p>Larynx and Thyroid gland</p>
+                <button onclick="downloadDeck('decks/deck9.apkg')">Download</button>
+            </div>
+            
+            <div class="deck-item" id="deck2">
+                <p>Oral cavity</p>
+                <button onclick="downloadDeck('decks/deck10.apkg')">Download</button>
+            </div>
+
+            <div class="deck-item" id="deck2">
+                <p>Nose, Sinuses, Pharynx, and Pterygopalatine Ganglion</p>
+                <button onclick="downloadDeck('decks/deck11.apkg')">Download</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="anki_script.js"></script>
+</body>
+</html>
