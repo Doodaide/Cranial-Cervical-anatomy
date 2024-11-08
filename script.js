@@ -76,6 +76,18 @@ const arterySources = [
     'arteries_images/Asc_pharyngeal.png',
 ]
 
+const vertsSources = [
+    'vertebrae_images/bone_labels.png', 
+    'vertebrae_images/Bones.png', 
+    'vertebrae_images/key_arteries.png', 
+    'vertebrae_images/Longus_capitis.png', 
+    'vertebrae_images/Longus_colli.png', 
+    'vertebrae_images/Rectus_muscles.png',
+    'vertebrae_images/S_ant.png', 
+    'vertebrae_images/S_med.png', 
+    'vertebrae_images/S_post.png',
+]
+
 // Dictionary to store sources and visibility states for each page
 const pageData = {
     "Nerves of the Skull": {
@@ -89,6 +101,10 @@ const pageData = {
     "Arteries": {
         sources: arterySources,
         visibility: Array(11).fill(false) // Adjust length as needed
+    },
+    "Cervical vertebrae, arteries, and muscles": {
+        sources: vertsSources,
+        visibility: Array(9).fill(false)
     }
 };
 
