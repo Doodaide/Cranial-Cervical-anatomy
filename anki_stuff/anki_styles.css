@@ -95,3 +95,35 @@ body {
     font-size: 24px;
     cursor: pointer;
 }
+
+/* Navigation bar styling for back button and breadcrumb */
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    background-color: #094260;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures the navigation is on top */
+  }
+  
+  .navigation button {
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: white;
+    color: #094260;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .navigation .breadcrumb {
+    font-size: 14px;
+    color: #f0f0f0;
+  }
+  
