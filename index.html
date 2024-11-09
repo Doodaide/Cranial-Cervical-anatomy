@@ -11,26 +11,59 @@
         <span class="breadcrumb">Homepage</span>
     </div>
 
+    <!-- Title Box Aligned to the Left -->
     <div class="title-box">
         <h1>Anatomical Diagrams of the Head and Neck</h1>
         <p>by Alex He</p>
     </div>
-    <div class="description">
-        <p>This is a small study aid that I intend to keep updating as a project.
-        It contains labelled simplified diagrams I have drawn that show some essential head and neck components. Many of these are made from composites of illustrated diagrams found in Netter's </p>
-        <p>This site functions best on a laptop (no mobile support) and is interactive (canvas can zoom in, buttons can be ticked)</p>
-        <p>Please be aware I cannot guarantee the accuracy of any drawings or spellings used. </p>
-        <p>If you have anything you wish to update me on, request, or inform me about mistakes, please send me an email at: business.alexander.he@gmail.com</p>
-    </div>
-    <div class="button-container">
-        <button onclick="location.href='nerves.html'">Nerves of the skull</button>
-        <button onclick="location.href='facial_muscles.html'">Facial muscles and infrahyoid muscles</button>
-        <button onclick="location.href='arteries.html'">Arteries of the head and neck</button>
-        <button onclick="location.href='verts.html'">Cervical vertebrae, arteries, and muscles</button>
 
-        <button onclick="location.href='legacy_lab.html'">Legacy lab doodles</button>
-        <button onclick="location.href='anki_stuff/anki_decks.html'">My anki decks</button>
+    <div class="container">
+        <!-- Scrollable Menu on the Left -->
+        <div class="menu">
+            <h3>More Sites</h3>
+            <div class="button-container">
+                <button onclick="location.href='nerves.html'">Nerves of the skull</button>
+                <button onclick="location.href='facial_muscles.html'">Facial muscles and infrahyoid muscles</button>
+                <button onclick="location.href='arteries.html'">Arteries of the head and neck</button>
+                <button onclick="location.href='verts.html'">Cervical vertebrae, arteries, and muscles</button>
+                <button onclick="location.href='legacy_lab.html'">Legacy lab doodles</button>
+                <button onclick="location.href='anki_stuff/anki_decks.html'">My anki decks</button>
+            </div>
+        </div>
 
+        <!-- Description Box with Image Placeholder -->
+        <div class="description">
+            <p>This is a small study aid that I intend to keep updating as a project.
+            It contains labelled simplified diagrams I have drawn that show some essential head and neck components. Many of these are made from composites of illustrated diagrams found in Netter's</p>
+            <p>This site functions best on a laptop (no mobile support) and is interactive (canvas can zoom in, buttons can be ticked)</p>
+            <p>Please be aware I cannot guarantee the accuracy of any drawings or spellings used.</p>
+            <p>If you have anything you wish to update me on, request, or inform me about mistakes, please send me an email at: business.alexander.he@gmail.com</p>
+
+            <!-- Image Placeholder -->
+            <div class="image-placeholder">
+                <img src="images/meme.png" alt="Meme" />
+                <p>Skeleton</p>
+            </div>
+        </div>
+
+        <!-- PDF Viewer with Title and Download Option -->
+        <div class="pdf-viewer-container">
+            <h3>Sumen's Notes</h3>
+            <p class="pdf-description">These notes cover various anatomical structures and serve as a supplement to the diagrams provided.</p>
+            <iframe id="pdf-viewer" src="images/sumens_notes.pdf" width="100%" height="600px"></iframe>
+            <button onclick="downloadPDF('images/sumens_notes.pdf')">Download Notes</button>
+        </div>
     </div>
+
+    <script>
+        function downloadPDF(pdfFile) {
+            const link = document.createElement("a");
+            link.href = pdfFile;
+            link.download = "images/sumens_notes.pdf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
 </body>
 </html>

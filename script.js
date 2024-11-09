@@ -187,6 +187,5 @@ canvas.addEventListener('mousemove', (e) => {
         draw();
     }
 });
-
 // Load images when the page is ready
 window.onload = loadImages;
