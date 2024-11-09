@@ -139,7 +139,7 @@ html, body {
     width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -162,7 +162,7 @@ html, body {
   
   #pdf-viewer {
     width: 100%;
-    height: 800px; /* Enlarged for better readability */
+    height: 700px; /* Enlarged for better readability */
     border: 1px solid #ccc;
     background-color: #f0f0f0;
   }
