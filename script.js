@@ -88,6 +88,24 @@ const vertsSources = [
     'images/vertebrae_images/S_post.png',
 ]
 
+const veins1Sources = [
+    'images/veins_sag_images/Bones.png',
+    'images/veins_sag_images/ext_jug.png',
+    'images/veins_sag_images/facial.png',
+    'images/veins_sag_images/I_jug.png',
+    'images/veins_sag_images/occipital.png',
+    'images/veins_sag_images/post_auricular.png',
+    'images/veins_sag_images/Pterygoid_venous_plexus.png',
+    'images/veins_sag_images/retro.png',
+    'images/veins_sag_images/sup_a_mid_thyroid_veins.png',
+    'images/veins_sag_images/sup_temporal.png',
+
+
+
+
+
+]
+
 // Dictionary to store sources and visibility states for each page
 const pageData = {
     "Nerves of the Skull": {
@@ -105,6 +123,10 @@ const pageData = {
     "Cervical vertebrae, arteries, and muscles": {
         sources: vertsSources,
         visibility: Array(9).fill(false)
+    },
+    "Veins of the head and neck (sagittal view)": {
+        sources: veins1Sources,
+        visibility: Array(10).fill(false)
     }
 };
 
