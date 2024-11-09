@@ -77,15 +77,18 @@ const arterySources = [
 ]
 
 const vertsSources = [
-    'images/vertebrae_images/bone_labels.png', 
-    'images/vertebrae_images/Bones.png', 
-    'images/vertebrae_images/key_arteries.png', 
-    'images/vertebrae_images/Longus_capitis.png', 
-    'images/vertebrae_images/Longus_colli.png', 
-    'images/vertebrae_images/Rectus_muscles.png',
-    'images/vertebrae_images/S_ant.png', 
-    'images/vertebrae_images/S_med.png', 
-    'images/vertebrae_images/S_post.png',
+    'images/vertebrae_images/bone_labels.png', // 0
+    'images/vertebrae_images/Bones.png', // 1
+    'images/vertebrae_images/Longus_capitis.png', // 2
+    'images/vertebrae_images/Longus_colli.png', // 3
+    'images/vertebrae_images/Rectus_muscles.png', //4
+    'images/vertebrae_images/S_post.png', // 5
+    'images/vertebrae_images/S_med.png', // 6
+    'images/vertebrae_images/key_arteries.png', // 7
+    'images/vertebrae_images/S_ant.png', // 8
+    'images/vertebrae_images/thoracic_and_neck_veins.png', // 9
+    'images/vertebrae_images/int_jugs.png' // 10
+    
 ]
 
 const veins1Sources = [
@@ -122,7 +125,7 @@ const pageData = {
     },
     "Cervical vertebrae, arteries, and muscles": {
         sources: vertsSources,
-        visibility: Array(9).fill(false)
+        visibility: Array(11).fill(false)
     },
     "Veins of the head and neck (sagittal view)": {
         sources: veins1Sources,
