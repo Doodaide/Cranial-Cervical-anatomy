@@ -1,0 +1,156 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* General body styling for centered alignment */
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #f0f0f0;
+    overflow: hidden;
+  }
+  
+  /* Title box styling */
+  .title-box {
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .description {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: left;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  /* Container to hold canvas and menu side-by-side */
+  .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 90vw;
+    max-height: 80vh;
+    gap: 20px;
+  }
+  
+  /* Canvas styling */
+  canvas {
+    max-width: 70vw;
+    max-height: 80vh;
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: grab;
+  }
+  
+  /* Menu styling */
+  .menu {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  
+  .menu h3 {
+    margin-top: 0;
+  }
+  
+  .menu label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .menu label input {
+    margin-right: 10px;
+  }
+  
+  /* Styling for Select All / Deselect All buttons */
+  .menu button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #094260;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .menu button:hover {
+    background-color: #176088;
+  }
+  
+  /* Button container styling for homepage buttons */
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  button {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #094260;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  /* Navigation bar styling for back button and breadcrumb */
+  .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    background-color: #094260;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures the navigation is on top */
+  }
+  
+  .navigation button {
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: white;
+    color: #094260;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .navigation .breadcrumb {
+    font-size: 14px;
+    color: #f0f0f0;
+  }
