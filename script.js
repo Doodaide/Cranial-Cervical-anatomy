@@ -102,11 +102,42 @@ const veins1Sources = [
     'images/veins_sag_images/retro.png',
     'images/veins_sag_images/sup_a_mid_thyroid_veins.png',
     'images/veins_sag_images/sup_temporal.png',
+]
 
+const larynxLateral = [
+    'images/lateral_larynx/cartilages.png',
+    'images/lateral_larynx/Larynx_labels.png',
+    'images/lateral_larynx/TE_AE_V_TA.png',
+    'images/lateral_larynx/cricothyroids.png',
+    'images/lateral_larynx/oblique_and_transverse.png',
+    'images/lateral_larynx/quadrangular_and_conus.png'
+]
 
+const larynxSuperior = [
+    'images/superior_larynx/cartilages.png',
+    'images/superior_larynx/cartilage_labels.png',
+    'images/superior_larynx/posterior_cricoarytenoids.png',
+    'images/superior_larynx/lat_cricoarytenoids.png',
+    'images/superior_larynx/transverse_and_obliques.png',
+    'images/superior_larynx/vocalis.png',
+    'images/superior_larynx/thyroarytenoids.png',
+    'images/superior_larynx/cricothyroids.png',
+]
 
-
-
+const musclesOfMastication = [
+    'images/mastication/skull.png',
+    'images/mastication/skull_labels.png',
+    'images/mastication/tmj .png',
+    'images/mastication/buck.png',
+    'images/mastication/superior_const.png',
+    'images/mastication/med_prerygoid.png',
+    'images/mastication/lat_prerygoid.png',
+    'images/mastication/med_pterygoid_sup_head.png',
+    'images/mastication/coronoid.png',
+    'images/mastication/temporalis.png',
+    'images/mastication/removable.png',
+    'images/mastication/capsule.png',
+    'images/mastication/massseter.png',
 ]
 
 // Dictionary to store sources and visibility states for each page
@@ -130,6 +161,18 @@ const pageData = {
     "Veins of the head and neck (sagittal view)": {
         sources: veins1Sources,
         visibility: Array(10).fill(false)
+    },
+    "Lateral view of the Larynx": {
+        sources: larynxLateral, 
+        visibility: Array(6).fill(false)
+    },
+    "Superior view of the Larynx":{
+        sources: larynxSuperior,
+        visibility: Array(8).fill(false)
+    },
+    "Muscles of Mastication":{
+        sources: musclesOfMastication,
+        visibility: Array(13).fill(false)
     }
 };
 
