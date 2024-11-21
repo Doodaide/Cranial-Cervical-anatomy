@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Useful Links</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navigation">
+        <button onclick="location.href='index.html'">Back to Homepage</button>
+        <span class="breadcrumb">Homepage / Useful Links</span>
+    </div>
+    
+    <div class="title-box">
+        <h1>Useful Links</h1>
+        <p>by Alex He</p>
+    </div>
+    
+    <div class="container">
+        <!-- List of Boxes with Hyperlinks -->
+        <div class="link-boxes">
+            <div class="link-item">
+                <p>Musculoskeletal system 3D model</p>
+                <a href="https://www.msdmanuals.com/en-au/professional/multimedia/3dmodel/musculoskeletal-system-complete" target="_blank">
+                    <button>Go to Link</button>
+                </a>
+            </div>
+            <div class="link-item">
+                <p>Useful 3D images and overlapping diagrams</p>
+                <a href="https://www.imaios.com/en/e-anatomy/head-and-neck/oral-cavity" target = "_blank">
+                    <button>Go to Link</button>
+                </a>
+            </div>
+            <!-- <div class="link-item">
+                <p>Rohen images used in 2024</p>
+                <a href="https://docs.google.com/document/d/1m1RmfJoGJrflVU9B5mU2dNoAMnJ7XzYJGH7XGJE_cbg/edit?usp=sharing" target = "_blank">
+                    <button>Go to Link</button>
+                </a>
+            </div> -->
+            <div class="link-item">
+                <p>Some good anatomy videos</p>
+                <a href="https://www.youtube.com/@SamWebster" target = "_blank">
+                    <button>Go to Link</button>
+                </a>
+            </div>
+            <!-- Add more resources as needed -->
+        </div>
+    </div>
+    
+    <style>
+        /* Additional styling for link boxes */
+        .link-boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+            width: 90%;
+        }
+
+        .link-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-item p {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .link-item button {
+            padding: 10px;
+            background-color: #094260;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .link-item button:hover {
+            background-color: #176088;
+        }
+    </style>
+</body>
+</html>
