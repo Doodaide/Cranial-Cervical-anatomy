@@ -140,6 +140,31 @@ const musclesOfMastication = [
     'images/mastication/massseter.png',
 ]
 
+const tongueAndInfrahyoids = [
+    'images/tongue_and_infrahyoids/half_of_mandible_bone.png', 
+    'images/tongue_and_infrahyoids/mylohyoid.png', 
+    'images/tongue_and_infrahyoids/ant_digastric.png', 
+    'images/tongue_and_infrahyoids/genio_gloss_hypid.png', 
+    'images/tongue_and_infrahyoids/tongue.png', 
+    'images/tongue_and_infrahyoids/hyoid.png', 
+    'images/tongue_and_infrahyoids/thyrohyoid.png', 
+    'images/tongue_and_infrahyoids/sternothyroid.png', 
+    'images/tongue_and_infrahyoids/sternohyoid.png', 
+    'images/tongue_and_infrahyoids/oesophagus.png', 
+    'images/tongue_and_infrahyoids/omohyoid.png', 
+    'images/tongue_and_infrahyoids/middle_pharyngeal.png',
+    'images/tongue_and_infrahyoids/stylopharyngeus.png', 
+    'images/tongue_and_infrahyoids/inf_pharyngeal_constrictor.png', 
+    'images/tongue_and_infrahyoids/styloid_process.png', 
+    'images/tongue_and_infrahyoids/hyoglossus.png', 
+    'images/tongue_and_infrahyoids/hypoglossal.png', 
+    'images/tongue_and_infrahyoids/styloglossus.png', 
+    'images/tongue_and_infrahyoids/spine.png', 
+    'images/tongue_and_infrahyoids/spinal_nerves.png',
+    'images/tongue_and_infrahyoids/ansa.png',
+    'images/tongue_and_infrahyoids/outer_view_mandible.png'
+]
+
 // Dictionary to store sources and visibility states for each page
 const pageData = {
     "Nerves of the Skull": {
@@ -173,6 +198,10 @@ const pageData = {
     "Muscles of Mastication":{
         sources: musclesOfMastication,
         visibility: Array(13).fill(false)
+    },
+    "Tongue and Infrahyoid Muscles":{
+        sources: tongueAndInfrahyoids, 
+        visibility: Array(22).fill(false)
     }
 };
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tongue and Infrahyoid Muscles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navigation">
+        <button onclick="location.href='index.html'">Back to Homepage</button>
+        <span class="breadcrumb">Homepage / Tongue and Infrahyoid Muscles</span>
+    </div>
+    <div class="title-box">
+        <h1>Tongue and Infrahyoid Muscles</h1>
+        <p>by Alex He</p>
+    </div>
+    <div class="container">
+        <canvas id="canvas"></canvas>
+        <div class="menu">
+            <h3>Toggle Layers</h3>
+            <button onclick="selectAllLayers(true)">Select All</button>
+            <button onclick="selectAllLayers(false)">Deselect All</button>
+            <label><input type="checkbox" onchange="toggleLayer(0, this.checked)">Right Half of mandible</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(1, this.checked)">Cut mylohyoid muscle</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(2, this.checked)">Anterior belly of digastric</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(3, this.checked)">Genioglossus, Geniohyoid, and intrinsic tongue muscles</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(4, this.checked)">Tongue mucosa</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(5, this.checked)">Hyoid bone and thyrohyoid membrane</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(6, this.checked)">Thyrohyoid muscle</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(7, this.checked)">Sternothyroid muscle</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(8, this.checked)">Sternohyoid muscle</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(9, this.checked)">Oesophagus</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(10, this.checked)">Right Half of mandible</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(11, this.checked)">Middle Pharyngeal constrictor muscle</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(12, this.checked)">Stylopharyngeus muscle</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(13, this.checked)">Inferior Pharyngeal constrictor muscle</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(14, this.checked)">Right Half of mandible</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(15, this.checked)">Styloid process and stylohyoid muscle</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(16, this.checked)">Hyoglossus muscle</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(17, this.checked)">Hypoglossal nerve</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(18, this.checked)">Styloglossus muscle</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(19, this.checked)">Spinal column</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(20, this.checked)">Spinal nerves</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(21, this.checked)">Ansa Cervicalis</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(22, this.checked)">Left view of mandible</label><br>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
