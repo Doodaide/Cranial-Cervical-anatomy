@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superior view of the skull and foramina</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navigation">
+        <button onclick="location.href='index.html'">Back to Homepage</button>
+        <span class="breadcrumb">Homepage / Superior Skull and foramina</span>
+    </div>
+    <div class="title-box">
+        <h1>Superior view of the skull and foramina</h1>
+        <p>by Alex He</p>
+    </div>
+    <div class="container">
+        <canvas id="canvas"></canvas>
+        <div class="menu">
+            <h3>Toggle Layers</h3>
+            <button onclick="selectAllLayers(true)">Select All</button>
+            <button onclick="selectAllLayers(false)">Deselect All</button>
+            <label><input type="checkbox" onchange="toggleLayer(0, this.checked)">Frontal Bone</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(1, this.checked)">Ethmoid Bone</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(2, this.checked)">Sphenoid Bone</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(3, this.checked)">Temporal Bones</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(4, this.checked)">Parietal Bones</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(5, this.checked)">Occipital Bone</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(6, this.checked)">Top of Frontal Bone</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(7, this.checked)">Top of Occipital Bone</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(8, this.checked)">Tops of Parietal Bones</label><br>
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

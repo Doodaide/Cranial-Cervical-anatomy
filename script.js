@@ -165,6 +165,18 @@ const tongueAndInfrahyoids = [
     'images/tongue_and_infrahyoids/outer_view_mandible.png'
 ]
 
+const superiorSkull = [
+    'images/superior_skull/frontal.png', 
+    'images/superior_skull/ethmoid.png', 
+    'images/superior_skull/sphenoid.png',
+    'images/superior_skull/temporal.png', 
+    'images/superior_skull/parietals.png',
+    'images/superior_skull/occipital.png',
+    'images/superior_skull/frontal_top.png', 
+    'images/superior_skull/occipital_top.png', 
+    'images/superior_skull/parietals_top.png'
+]
+
 // Dictionary to store sources and visibility states for each page
 const pageData = {
     "Nerves of the Skull": {
@@ -202,7 +214,12 @@ const pageData = {
     "Tongue and Infrahyoid Muscles":{
         sources: tongueAndInfrahyoids, 
         visibility: Array(22).fill(false)
+    },
+    "Superior view of the skull and foramina":{
+        sources: superiorSkull,
+        visibility: Array(9).fill(false)
     }
+
 };
 
 // Identify the current page and get corresponding data
