@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inferior Skull view and foramina</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navigation">
+        <button onclick="location.href='index.html'">Back to Homepage</button>
+        <span class="breadcrumb">Homepage / Inferior Skull view and foramina</span>
+    </div>
+    <div class="title-box">
+        <h1>Inferior Skull view and foramina</h1>
+        <p>by Alex He</p>
+    </div>
+    <div class="container">
+        <canvas id="canvas"></canvas>
+        <div class="menu">
+            <h3>Toggle Layers</h3>
+            <button onclick="selectAllLayers(true)">Select All</button>
+            <button onclick="selectAllLayers(false)">Deselect All</button>
+            <label><input type="checkbox" onchange="toggleLayer(0, this.checked)">Bones</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(1, this.checked)">Labels</label><br>
+            
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

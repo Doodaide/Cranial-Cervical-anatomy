@@ -177,6 +177,11 @@ const superiorSkull = [
     'images/superior_skull/parietals_top.png'
 ]
 
+const inferiorSkull = [
+    'images/inferior_skull/bones.png', 
+    'images/inferior_skull/labels.png'
+]
+
 // Dictionary to store sources and visibility states for each page
 const pageData = {
     "Nerves of the Skull": {
@@ -218,6 +223,10 @@ const pageData = {
     "Superior view of the skull and foramina":{
         sources: superiorSkull,
         visibility: Array(9).fill(false)
+    },
+    "Inferior Skull view and foramina":{
+        sources: inferiorSkull, 
+        visibility: Array(2).fill(false)
     }
 
 };
