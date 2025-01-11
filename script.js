@@ -197,6 +197,11 @@ const lymphNodes = [
     'images/lymph_nodes/sup_cervical_nodes.png',
 ]
 
+const frontalSkull = [
+    'images/frontal_skull/bones.png',
+    'images/frontal_skull/labels.png'
+]
+
 // Dictionary to store sources and visibility states for each page
 const pageData = {
     "Nerves of the Skull": {
@@ -246,8 +251,11 @@ const pageData = {
     "Lymph Nodes of the Head and Neck":{
         sources: lymphNodes,
         visibility: Array(12).fill(false)
+    },
+    "Frontal Skull view":{
+        sources: frontalSkull, 
+        visibility: Array(2).fill(false)
     }
-
 };
 
 // Identify the current page and get corresponding data
