@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lymph Nodes of the Head and Neck</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navigation">
+        <button onclick="location.href='index.html'">Back to Homepage</button>
+        <span class="breadcrumb">Homepage / Lymph Nodes of the Head and Neck</span>
+    </div>
+    <div class="title-box">
+        <h1>Lymph Nodes of the Head and Neck</h1>
+        <p>by Alex He</p>
+    </div>
+    <div class="container">
+        <canvas id="canvas"></canvas>
+        <div class="menu">
+            <h3>Toggle Layers</h3>
+            <button onclick="selectAllLayers(true)">Select All</button>
+            <button onclick="selectAllLayers(false)">Deselect All</button>
+            <label><input type="checkbox" onchange="toggleLayer(0, this.checked)">Bones</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(1, this.checked)">Muscles of mastication</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(2, this.checked)">Zygomer (to hide the muscles)</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(3, this.checked)">Muscles of Facial Expression</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(4, this.checked)">Misc. Neck stuff</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(5, this.checked)">Parotid Gland</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(6, this.checked)">Trapezius muscle</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(7, this.checked)">Deep Cerivcal Lymph Nodes</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(8, this.checked)">Sternocleidomastoid muscle</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(9, this.checked)">Retroauricular and Occipital Lymph Nodes</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(10, this.checked)">Superficial Parotid and Buccal Lymph Nodes</label><br>
+            <label><input type="checkbox" onchange="toggleLayer(11, this.checked)">Superficial Cervical Lymph Nodes</label><br>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

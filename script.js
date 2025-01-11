@@ -182,6 +182,21 @@ const inferiorSkull = [
     'images/inferior_skull/labels.png'
 ]
 
+const lymphNodes = [
+    'images/lymph_nodes/bones.png',
+    'images/lymph_nodes/mastication.png',
+    'images/lymph_nodes/zygomer.png',
+    'images/lymph_nodes/muscles_of_facial_expression.png',
+    'images/lymph_nodes/neck_stuff.png',
+    'images/lymph_nodes/parotid_gland.png',
+    'images/lymph_nodes/trapezius.png',
+    'images/lymph_nodes/deep_cervical_nodes.png',
+    'images/lymph_nodes/SCM.png',
+    'images/lymph_nodes/RA_O_nodes.png',
+    'images/lymph_nodes/SP_B_nodes.png',
+    'images/lymph_nodes/sup_cervical_nodes.png',
+]
+
 // Dictionary to store sources and visibility states for each page
 const pageData = {
     "Nerves of the Skull": {
@@ -227,6 +242,10 @@ const pageData = {
     "Inferior Skull view and foramina":{
         sources: inferiorSkull, 
         visibility: Array(2).fill(false)
+    },
+    "Lymph Nodes of the Head and Neck":{
+        sources: lymphNodes,
+        visibility: Array(12).fill(false)
     }
 
 };
