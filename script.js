@@ -202,6 +202,19 @@ const frontalSkull = [
     'images/frontal_skull/labels.png'
 ]
 
+const paranasal = [
+    'images/paranasal_sinuses/maxilla.png',
+    'images/paranasal_sinuses/nose.png',
+    'images/paranasal_sinuses/Palatine.png',
+    'images/paranasal_sinuses/sphenoid.png',
+    'images/paranasal_sinuses/ethmoid.png',
+    'images/paranasal_sinuses/concha.png',
+    'images/paranasal_sinuses/frontal.png',
+    'images/paranasal_sinuses/Septal_cartilage.png',
+    'images/paranasal_sinuses/ethmoid_perp.png',
+    'images/paranasal_sinuses/vomer.png',
+]
+
 // Dictionary to store sources and visibility states for each page
 const pageData = {
     "Nerves of the Skull": {
@@ -255,6 +268,10 @@ const pageData = {
     "Frontal Skull view":{
         sources: frontalSkull, 
         visibility: Array(2).fill(false)
+    },
+    "Median Sagittal view of the Skull and Paranasal Sinuses":{
+        sources: paranasal,
+        visibility: Array(10).fill(false)
     }
 };
 
