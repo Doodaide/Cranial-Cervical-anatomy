@@ -215,6 +215,11 @@ const paranasal = [
     'images/paranasal_sinuses/vomer.png',
 ]
 
+const tq_skull = [
+    'images/3q_skull/skull.png',
+    'images/3q_skull/labels.png'
+]
+
 // Dictionary to store sources and visibility states for each page
 const pageData = {
     "Nerves of the Skull": {
@@ -272,6 +277,10 @@ const pageData = {
     "Median Sagittal view of the Skull and Paranasal Sinuses":{
         sources: paranasal,
         visibility: Array(10).fill(false)
+    },
+    "3/4 Skull view": {
+        sources: tq_skull,
+        visibility: Array(2).fill(false)
     }
 };
 
