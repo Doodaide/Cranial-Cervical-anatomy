@@ -220,6 +220,23 @@ const tq_skull = [
     'images/3q_skull/labels.png'
 ]
 
+const trigeminal = [
+    'images/trigeminal/bony_structures.png', 
+    'images/trigeminal/nose_cartilage.png', 
+    'images/trigeminal/eye.png', 
+    'images/trigeminal/optic.png', 
+    'images/trigeminal/zygomer_layer1.png', 
+    'images/trigeminal/maxillary_nerve.png', 
+    'images/trigeminal/maxilla_bone_layer.png', 
+    'images/trigeminal/PTG.png', 
+    'images/trigeminal/mandibular.png',
+    'images/trigeminal/lacrimal_gland.png', 
+    'images/trigeminal/ophthalmic.png',
+    'images/trigeminal/ciliary_ganglion.png',
+    'images/trigeminal/trigeminal.png',
+    'images/trigeminal/zygomer_layer2.png' 
+]
+
 // Dictionary to store sources and visibility states for each page
 const pageData = {
     "Nerves of the Skull": {
@@ -281,6 +298,10 @@ const pageData = {
     "3/4 Skull view": {
         sources: tq_skull,
         visibility: Array(2).fill(false)
+    },
+    "Trigeminal Nerve View": {
+        sources: trigeminal, 
+        visibility: Array(14).fill(false)
     }
 };
 
