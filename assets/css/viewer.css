@@ -1,0 +1,412 @@
+/* ==========================================================================
+   Diagram viewer: a plate (the drawing) beside a legend (the layers)
+   ========================================================================== */
+
+/* The viewer is full-bleed, so the header lines up with it instead of the 1200px column */
+.viewer-page .site-header__inner {
+  width: auto;
+  margin-inline: 12px;
+}
+.viewer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 372px;
+  gap: 12px;
+  height: calc(100dvh - var(--header-h));
+  padding: 12px;
+}
+
+/* ---- Stage --------------------------------------------------------------- */
+.stage {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  background: var(--paper);
+  color: var(--paper-text);
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.stage.is-dragging {
+  cursor: grabbing;
+}
+.stage:focus-visible {
+  outline-offset: -3px;
+}
+.plate {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+.plate img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  transition: opacity 0.15s;
+}
+.plate img.is-shown,
+.plate img.is-peeked {
+  display: block;
+}
+/* Hovering a layer in the legend dims everything else so you can see where it sits */
+.plate[data-peek] img.is-shown:not(.is-peeked) {
+  opacity: 0.2;
+}
+.stage__status {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 0.9375rem;
+  pointer-events: none;
+}
+
+.stage__tools {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 2px 10px rgb(6 31 46 / 0.14);
+  cursor: default;
+}
+.stage__tools--right {
+  left: auto;
+  right: 12px;
+}
+.tool {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.tool:hover {
+  background: var(--sunk);
+}
+.tool__zoom {
+  min-width: 52px;
+  text-align: center;
+  font: 500 0.8125rem/1 var(--font-ui);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- Panel (the legend) -------------------------------------------------- */
+.panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  background: var(--surface);
+}
+.panel__top {
+  padding: 16px 20px 14px;
+  border-bottom: 1px solid var(--line);
+}
+.panel__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 0 10px -4px;
+  padding: 2px 6px 2px 2px;
+  border-radius: 6px;
+  color: var(--text-soft);
+  font-size: 0.8125rem;
+  text-decoration: none;
+}
+.panel__back:hover {
+  background: var(--sunk);
+  color: var(--text);
+}
+.panel__title {
+  font-size: 1.5rem;
+}
+.panel__hint {
+  margin-top: 8px;
+  color: var(--text-soft);
+  font-size: 0.875rem;
+}
+.panel__count {
+  margin-top: 10px;
+  color: var(--text-faint);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+.panel__tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--line);
+}
+.panel__scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 4px 8px 20px;
+  overscroll-behavior: contain;
+}
+.search {
+  display: block;
+  padding: 12px 12px 4px;
+}
+.search input {
+  width: 100%;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  background: var(--sunk);
+  color: var(--text);
+  font: 400 0.9375rem var(--font-ui);
+}
+.search input::placeholder {
+  color: var(--text-faint);
+}
+
+.group {
+  padding-top: 12px;
+}
+.group__head {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+}
+.group__title {
+  margin-right: auto;
+  color: var(--text-soft);
+  font: 600 0.8125rem/1.3 var(--font-ui);
+  letter-spacing: 0;
+}
+.group__count {
+  margin-right: 6px;
+  color: var(--text-faint);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.layers {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.layer {
+  display: flex;
+  align-items: flex-start;
+  border-radius: var(--radius-m);
+}
+.layer:hover {
+  background: var(--sunk);
+}
+.layer.is-on {
+  background: var(--brand-soft);
+}
+.layer__main {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  padding: 8px 4px 8px 12px;
+  cursor: pointer;
+}
+.layer__input {
+  position: absolute;
+  opacity: 0;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+}
+.layer__box {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 4px;
+  background: var(--surface);
+}
+.layer__input:checked + .layer__box {
+  border-color: var(--brand);
+  background: var(--brand);
+}
+.layer__input:checked + .layer__box::after {
+  content: "";
+  width: 9px;
+  height: 5px;
+  margin-top: -2px;
+  border-left: 2px solid var(--on-brand);
+  border-bottom: 2px solid var(--on-brand);
+  transform: rotate(-45deg);
+}
+.layer__input:focus-visible + .layer__box {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.layer .ink-dot {
+  margin-top: 5px;
+}
+.layer__text {
+  min-width: 0;
+}
+.layer__name {
+  display: block;
+  font: 500 0.9375rem/1.3 var(--font-ui);
+}
+.layer__note {
+  display: block;
+  margin-top: 2px;
+  color: var(--text-faint);
+  font-size: 0.8125rem;
+  line-height: 1.35;
+}
+.layer.is-loading .ink-dot {
+  animation: pulse 0.9s ease-in-out infinite;
+}
+.layer.is-error .layer__name {
+  color: var(--marker);
+}
+@keyframes pulse {
+  50% {
+    opacity: 0.25;
+  }
+}
+.layer__extras {
+  display: flex;
+  flex: none;
+  gap: 2px;
+  padding: 5px 6px 0 0;
+}
+.mini {
+  min-width: 34px;
+  height: 28px;
+  padding: 0 8px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-soft);
+  font: 500 0.75rem/1 var(--font-ui);
+  cursor: pointer;
+}
+.mini:hover {
+  border-color: var(--line-strong);
+  background: var(--surface);
+}
+.mini[aria-pressed="true"] {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: var(--on-brand);
+}
+.layer__only {
+  opacity: 0;
+}
+.layer:hover .layer__only,
+.layer:focus-within .layer__only {
+  opacity: 1;
+}
+@media (hover: none) {
+  .layer__only {
+    opacity: 1;
+  }
+}
+
+.more {
+  margin-top: 20px;
+  padding: 16px 12px 0;
+  border-top: 1px solid var(--line);
+}
+.more__title {
+  margin-bottom: 6px;
+  color: var(--text-soft);
+  font: 600 0.8125rem/1.3 var(--font-ui);
+}
+.more ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.more a {
+  display: block;
+  padding: 6px 0;
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+.more a:hover {
+  text-decoration: underline;
+}
+
+.notfound {
+  grid-column: 1 / -1;
+  max-width: 560px;
+  padding: 64px 0;
+}
+.notfound h1 {
+  font-size: 2rem;
+}
+.notfound p,
+.notfound ul {
+  margin-top: 12px;
+  color: var(--text-soft);
+}
+
+/* ---- Narrow screens: the plate sticks to the top, the legend scrolls under it */
+@media (max-width: 899px) {
+  .viewer-page .site-header__inner {
+    margin-inline: var(--gutter);
+  }
+  .viewer {
+    display: block;
+    height: auto;
+    padding: 0;
+  }
+  .stage {
+    position: sticky;
+    top: var(--header-h);
+    z-index: 20;
+    height: 52dvh;
+    border-width: 0 0 1px;
+    border-radius: 0;
+  }
+  .panel {
+    overflow: visible;
+    border-width: 0;
+    border-radius: 0;
+  }
+  .panel__scroll {
+    overflow: visible;
+  }
+  .tool {
+    width: 40px;
+    height: 40px;
+  }
+  .mini {
+    height: 32px;
+  }
+}
