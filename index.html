@@ -1,98 +1,173 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagrams of the Head and Neck</title>
-    <link rel="stylesheet" href="index_styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cranial Cervical Anatomy | Head and neck diagrams</title>
+  <meta name="description" content="Hand-drawn head and neck anatomy diagrams by Alex He, built from layers you can switch on and off, with notes and Anki decks.">
+  <script src="assets/js/theme-init.js"></script>
+  <link rel="preload" href="assets/fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <noscript><style>.hero__figure { display: none; }</style></noscript>
 </head>
 <body>
-    <div class="navigation">
-        <span class="breadcrumb">Homepage</span>
-    </div>
+  <script src="assets/js/shell.js"></script>
 
-    <!-- Title Box Aligned to the Left -->
-    <div class="title-box">
-        <h1>Cranial Cervical Anatomy</h1>
-        <p>Alex He</p>
-    </div>
+  <main id="main">
 
-    <div class="container">
-        <!-- Scrollable Menu on the Left -->
-        <div class="menu">
-            <h3>More Pages</h3>
-            <div class="button-container">
-                <button onclick="location.href='nerves.html'">Nerves of the skull</button>
-                <button onclick="location.href='trigeminal_nerve.html'">Trigeminal nerve and its branches</button>
-                <button onclick="location.href='facial_muscles.html'">Facial muscles and infrahyoid muscles</button>
-                <button onclick="location.href='arteries.html'">Arteries of the head and neck</button>
-                <button onclick="location.href='verts.html'">Cervical vertebrae, arteries, veins, and muscles</button>
-                <button onclick="location.href='veins_sag.html'">Veins of the head and neck</button>
-                <button onclick="location.href='muscles_of_mastication.html'">Muscles of Mastication</button>
-                <button onclick="location.href='superior_larynx.html'">Superior View of Larynx</button>
-                <button onclick="location.href='lateral_larynx.html'">Lateral View of Larynx</button>
-                <button onclick="location.href='tongue_and_infrahyoids.html'">Tongue and Infrahyoids</button>
-                <button onclick="location.href='lymph_nodes.html'">Lymph Nodes</button>
-                <button onclick="location.href='frontal_skull.html'">Frontal Skull view</button>
-                <button onclick="location.href='superior_skull.html'">Superior Skull view</button>
-                <button onclick="location.href='inferior_skull.html'">Inferior Skull view</button>
-                <button onclick="location.href='3q_skull.html'">3/4 Skull view</button>
-                <button onclick="location.href='paranasal.html'">Median Sagittal view of Skull and Paranasal Sinuses</button>
-                <button onclick="location.href='gene.html'">Gene's Neuroanatomy Notes</button>
-                <button onclick="location.href='legacy_lab.html'">Legacy lab doodles</button>
-                <button onclick="location.href='anki_stuff/anki_decks.html'">My anki decks</button>
-                <button onclick="location.href='useful_links.html'">Useful Links</button>
-                
-            </div>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">Hand-drawn head and neck atlas</p>
+          <h1>Head and neck anatomy, one layer at a time.</h1>
+          <p class="hero__lede">Each diagram is drawn as separate layers. Switch structures on and off, build a structure up from its parts, and zoom in as far as you need.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#atlas">Browse the diagrams</a>
+            <a class="btn" id="hero-open" href="viewer.html?set=arteries">Open this diagram</a>
+          </div>
+          <p class="hero__count" id="count"></p>
         </div>
 
-        <!-- Description Box with Image Placeholder -->
-        <div class="description">
-            <p>This is a small study aid that I intend to keep updating as a project.
-            It contains labelled simplified diagrams I have drawn that show some essential head and neck components. Many of these are made from composites of illustrated diagrams found in Netter's, or tracings of images found online. 
-            I intend to add functionality to them by either adding labels, overlapping or collating similar images to show more thorough depictions of the anatomy. Thus, much of the work here isn't strictly original</p>
-            <p>However, I try my best to at least add my own labels or modify the images as best I can.</p>
-            <p>This site functions best on a laptop (no mobile support) and is interactive (canvas can zoom in, buttons can be ticked)</p>
-            <p>Please be aware I cannot guarantee the accuracy of any drawings or spellings used mainly because I am sometimes a buffoon and I don't use spellcheck on VsCode.</p>
-            <p>If you have anything you wish to update me on, request, or inform me about mistakes, please send me an email at: business.alexander.he@gmail.com</p>
+        <figure class="hero__figure">
+          <div class="plate-frame" id="hero-plate" role="img" aria-label="The arteries of the head and neck, built up over the skull one layer at a time"></div>
+          <div class="hero__chips" id="hero-chips" role="group" aria-label="Layers in this diagram"></div>
+          <figcaption class="hero__caption">
+            <span id="hero-caption">Arteries of the head and neck</span>
+            <button class="link-btn" id="hero-replay" type="button" hidden>Replay</button>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
 
-            <!-- Image Placeholder -->
-            <div class="image-placeholder">
-                <img src="images/meme.png" alt="Meme" />
-                <p>Skeleton</p>
+    <!-- Diagrams -->
+    <section class="section" id="atlas">
+      <div class="container">
+        <header class="section__head">
+          <h2>Diagrams</h2>
+          <p>Each diagram opens in a viewer where every layer can be switched on and off. Where a diagram has labels, they can be shown or hidden too.</p>
+        </header>
+        <div id="atlas-groups"></div>
+        <noscript><p class="note">The diagram viewer needs JavaScript. The notes, decks and links below still work without it.</p></noscript>
+      </div>
+    </section>
+
+    <!-- Resources -->
+    <section class="section" id="resources">
+      <div class="container">
+        <header class="section__head">
+          <h2>Resources</h2>
+          <p>Notes, flashcards and links that go with the diagrams.</p>
+        </header>
+
+        <h3 class="rows-title">Notes, cards and doodles</h3>
+        <ul class="rows">
+          <li class="row">
+            <div class="row__main">
+              <h4>Sumen's notes</h4>
+              <p>Notes by Sumen A that cover various anatomical structures and supplement the diagrams. They are written for ANAT3004 Cranial and Cervical Anatomy at USYD.</p>
             </div>
-        </div>
-
-        <!-- PDF Viewer with Title and Download Option -->
-        <div class="pdf-viewer-container">
-            <h3>Sumen's Notes</h3>
-            <p class="pdf-description">These notes cover various anatomical structures and serve as a supplement to the diagrams provided. This is specific for the ANAT3004 class (Cranial and Cervical Anatomy at USYD)</p>
-
-
-            <button id="view-button" onclick="showPDF()">View in Browser</button>
-            
-            <div id="pdf-viewer-wrapper" style="display: none;">
-                <iframe id="pdf-viewer" src="images/sumens_notes.pdf"></iframe>
+            <div class="row__actions">
+              <a class="btn btn--small btn--primary" href="images/sumens_notes.pdf" target="_blank" rel="noopener">Open PDF</a>
+              <a class="btn btn--small" href="images/sumens_notes.pdf" download>Download</a>
+              <span class="row__meta">PDF, 53 MB</span>
             </div>
-            <button onclick="downloadPDF('images/sumens_notes.pdf')">Download Notes</button>            
-        </div>
-    </div>
+          </li>
+          <li class="row">
+            <div class="row__main">
+              <h4>Anki decks</h4>
+              <p>Eleven flashcard decks, from the skull and foramina to the oral cavity, nose and pharynx.</p>
+            </div>
+            <div class="row__actions">
+              <a class="btn btn--small" href="anki_stuff/anki_decks.html">See the decks</a>
+            </div>
+          </li>
+          <li class="row">
+            <div class="row__main">
+              <h4>Legacy lab doodles</h4>
+              <p>Some lab diagrams I drew earlier, kept as a gallery.</p>
+            </div>
+            <div class="row__actions">
+              <a class="btn btn--small" href="legacy_lab.html">Open the gallery</a>
+            </div>
+          </li>
+          <li class="row">
+            <div class="row__main">
+              <h4>Gene's neuroanatomy notes</h4>
+              <p>Gene Park's hand-drawn neuroanatomy notes as one detailed PNG. The file is too large to display reliably in a browser, so it opens on Google Drive.</p>
+            </div>
+            <div class="row__actions">
+              <a class="btn btn--small" href="https://drive.google.com/file/d/1zBhLFStQ3ISwQOQccVHXT7KIW6-O7YMf/view?usp=sharing" target="_blank" rel="noopener">Open on Google Drive
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </li>
+        </ul>
 
-    <script>
-        function showPDF() {
-            // Hide the "View in Browser" button
-            document.getElementById("view-button").style.display = "none";
-            // Show the PDF viewer
-            document.getElementById("pdf-viewer-wrapper").style.display = "block";
-        }
-        function downloadPDF(pdfFile) {
-            const link = document.createElement("a");
-            link.href = pdfFile;
-            link.download = "images/sumens_notes.pdf";
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    </script>
+        <h3 class="rows-title">Elsewhere on the web</h3>
+        <ul class="rows">
+          <li class="row">
+            <div class="row__main">
+              <h4>Musculoskeletal system 3D model</h4>
+              <p>A complete 3D model from the MSD Manuals.</p>
+            </div>
+            <div class="row__actions">
+              <a class="btn btn--small" href="https://www.msdmanuals.com/en-au/professional/multimedia/3dmodel/musculoskeletal-system-complete" target="_blank" rel="noopener">Open
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </li>
+          <li class="row">
+            <div class="row__main">
+              <h4>IMAIOS e-Anatomy: head and neck</h4>
+              <p>Useful 3D images and overlapping diagrams.</p>
+            </div>
+            <div class="row__actions">
+              <a class="btn btn--small" href="https://www.imaios.com/en/e-anatomy/head-and-neck/oral-cavity" target="_blank" rel="noopener">Open
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </li>
+          <li class="row">
+            <div class="row__main">
+              <h4>Sam Webster on YouTube</h4>
+              <p>Some good anatomy videos.</p>
+            </div>
+            <div class="row__actions">
+              <a class="btn btn--small" href="https://www.youtube.com/@SamWebster" target="_blank" rel="noopener">Open
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container about">
+        <div class="about__text">
+          <h2>About</h2>
+          <p>This is a study aid I draw and keep updating. Each diagram is built from separate layers, so you can add one structure at a time or strip a drawing back to the bones.</p>
+          <p>Many of the drawings are composites of illustrations from Netter's atlas, or tracings of images found online, so they are not all strictly original. Where I can, I add my own labels or redraw parts to show the anatomy more thoroughly.</p>
+          <p>I cannot guarantee that every drawing or spelling is accurate. If you spot a mistake, or want to request something, email <a href="mailto:business.alexander.he@gmail.com">business.alexander.he@gmail.com</a>.</p>
+          <p>Sumen A made the PDF notes, and Frank Netter's drawings inspired many of the diagrams.</p>
+          <p class="about__small">The diagrams work on phones and tablets, but a diagram with many layers loads a lot of image data and can be slow on older devices. A laptop is still the most comfortable way to use them.</p>
+        </div>
+        <figure class="about__fig">
+          <img src="images/meme.png" width="494" height="581" loading="lazy" alt="A skeleton squatting a loaded barbell, captioned: Tympanic on my plexus till I promontory">
+          <figcaption>Skeleton</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="data/atlas.js"></script>
+  <script src="data/generated.js"></script>
+  <script src="assets/js/home.js"></script>
 </body>
 </html>

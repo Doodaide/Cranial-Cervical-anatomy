@@ -1,33 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="carousel_styles.css"> <!-- Link to your CSS -->
-    <title>Image Carousel</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Legacy lab doodles | Cranial Cervical Anatomy</title>
+  <meta name="description" content="Lab diagrams of the head and neck that Alex He drew earlier: vessels, nerves, muscles, skull, larynx, ear and eye.">
+  <script src="assets/js/theme-init.js"></script>
+  <link rel="preload" href="assets/fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/gallery.css">
 </head>
-<body>
-    <div class="navigation">
-        <button onclick="location.href='index.html'">Back to Homepage</button>
-        <span class="breadcrumb">Homepage / Legacy lab doodles</span>
-    </div>
-    <div class="title-box">
-        <h1>Some lab diagrams I drew</h1>
-        <p>by Alex He</p>
-    </div>
+<body class="gallery-page">
+  <script src="assets/js/shell.js"></script>
 
-    <div class="carousel-container">
-        <div class="carousel">
-            <img id="carousel-image" src="legacy_lab_doodles/i1.png" alt="Image" />
-            <p id="carousel-caption">Image 1 Caption</p>
+  <main class="gallery" id="main">
+    <section class="gstage" id="gstage" aria-label="Image">
+      <img class="gstage__img" id="g-img" alt="">
+    </section>
+
+    <aside class="gpanel" aria-label="Gallery">
+      <div class="gpanel__top">
+        <a class="gpanel__back" href="index.html#resources">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>
+          Resources
+        </a>
+        <h1 class="gpanel__title">Legacy lab doodles</h1>
+        <p class="gpanel__hint">Some lab diagrams I drew earlier. Use the arrow keys, or swipe, to move between them.</p>
+      </div>
+
+      <div class="gpanel__now">
+        <p class="gpanel__count" id="g-count"></p>
+        <p class="gpanel__caption" id="g-caption" aria-live="polite"></p>
+        <div class="gpanel__actions">
+          <button class="btn btn--small" id="g-prev" type="button">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>
+            Previous
+          </button>
+          <button class="btn btn--small btn--primary" id="g-next" type="button">
+            Next
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+          </button>
+          <a class="btn btn--small" id="g-full" href="#" target="_blank" rel="noopener">Full size</a>
         </div>
-    </div>
+      </div>
 
-    <div class="carousel-buttons">
-        <button id="prev-btn">Prev</button>
-        <button id="next-btn">Next</button>
-    </div>
+      <nav class="gpanel__scroll" aria-label="All images">
+        <ol class="gindex" id="g-list"></ol>
+      </nav>
+    </aside>
+  </main>
 
-    <script src="carousel.js"></script> <!-- Link to your JavaScript -->
+  <noscript>
+    <p style="padding:24px">The gallery needs JavaScript. Please turn it on, or <a href="index.html">return to the home page</a>.</p>
+  </noscript>
+
+  <script src="data/legacy.js"></script>
+  <script src="assets/js/gallery.js"></script>
 </body>
 </html>

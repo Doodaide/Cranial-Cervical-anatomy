@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diagram | Cranial Cervical Anatomy</title>
+  <meta name="description" content="A hand-drawn head and neck anatomy diagram. Switch layers on and off, zoom in and pan.">
+  <script src="assets/js/theme-init.js"></script>
+  <link rel="preload" href="assets/fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/viewer.css">
+</head>
+<body class="viewer-page">
+  <script src="assets/js/shell.js"></script>
+
+  <main class="viewer" id="main">
+    <section class="stage" id="stage" tabindex="0" role="group" aria-label="Diagram" aria-describedby="stage-help">
+      <div class="plate" id="plate"></div>
+      <p class="stage__status" id="stage-status">Loading diagram</p>
+
+      <div class="stage__tools" role="toolbar" aria-label="Zoom">
+        <button class="tool" id="zoom-out" type="button" aria-label="Zoom out">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
+        </button>
+        <span class="tool__zoom" id="zoom-label">100%</span>
+        <button class="tool" id="zoom-in" type="button" aria-label="Zoom in">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg>
+        </button>
+        <button class="tool" id="zoom-fit" type="button" aria-label="Fit showing layers to window" title="Fit showing layers to window">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+        </button>
+      </div>
+      <div class="stage__tools stage__tools--right">
+        <button class="tool" id="fullscreen" type="button" aria-label="Full screen">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"/></svg>
+        </button>
+      </div>
+      <p class="visually-hidden" id="stage-help">Drag to pan. Scroll or pinch to zoom. The plus and minus keys zoom, the arrow keys pan, and 0 fits the layers that are showing to the window.</p>
+    </section>
+
+    <aside class="panel" id="panel" aria-label="Layers"></aside>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <p style="padding:24px">This diagram viewer needs JavaScript. Please turn it on, or <a href="index.html">return to the home page</a>.</p>
+  </noscript>
+
+  <script src="data/atlas.js"></script>
+  <script src="data/generated.js"></script>
+  <script src="assets/js/viewer.js"></script>
+</body>
+</html>
