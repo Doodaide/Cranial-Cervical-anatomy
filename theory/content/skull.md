@@ -1,7 +1,66 @@
 ---
 slug: skull
-summary: How the vertebral column is laid out, then the cervical vertebrae in detail: the typical vertebra, the atlas and axis, the joints and ligaments that carry the skull, and the vertebral artery in the transverse foramina. The skull itself is still to come.
+summary: How the vertebral column is laid out, then the cervical vertebrae in detail the typical vertebra, the atlas and axis, the joints and ligaments that carry the skull, and the vertebral artery in the transverse foramina. The skull itself is still to come.
 ---
+
+## Bones of the cranium and face {#skull-bones covers="skull.o1 skull.s1.1 skull.s1.2"}
+
+The human skull consists of 28 bones: 
+- 8 cranial 
+- 14 facial 
+- 6 auditory (ossicles)
+
+The hyoid bone is sometimes counted, bringing that number up to 29. 
+
+These bones are split into cranial (neurocranium) and facial (viscerocranium) bones which protect the brain and form the face respecively. 
+
+Sources: own
+
+### Cranial Bones 
+There are 8 crainal bones that form the cranial vault. These bones surround the brain and its meninges, housing vital blood vessels and neural structures. They are summarized below in the following table: 
+
+|bone|paired status|
+|-|-|
+|Frontal|Single|
+|Temporal|Paired|
+|Parietal|Paired|
+|Occipital|Single|
+|Ethmoid|Single|
+|Sphenoid|Single|
+
+Sources: own
+
+### Facial Bones 
+The facial bones form the supporting structures and origins of attachments for muscles of facial expression, mastication, and house vital nerves, arteries and vessels. They are summarized below in the following table: 
+
+|bone|Paired status|
+|-|-|
+|Maxilla|Paired|
+|Zygomatic|Paired|
+|Lacrimal|Paired|
+|Nasal|Paired|
+|Inferior nasal concha|Paired|
+|Palatine|Paired|
+|Mandible|Single|
+|Vomer|Single|
+
+Sources: own
+
+## Sutures and joints of the skull {#skull-joints covers="skull.o2"}
+The majority of the joints found in the skull are fibrous joints (synarthroses) or sutures that allow very little movement, providing structural support and protection for the brain and associated vital structures. 
+
+Other joints of the skull include:
+
+Diarthroses:
+
+- The mandible's articulation with the temporal bone (Temporomandibular joint - TMJ), a special ginglymoarthroidal joint. 
+- The joints linking the ossicles (Malleoincuidal joint, incudostapedial joint) which are diarthroses (synovial in nature)
+
+Gomphoses: 
+
+- The anchors which fix the roots of the teeth into their sockets in the maxilla and mandible
+
+Sources: own
 
 ## Layout of the vertebral column {#vertebral-column covers="skull.o5"}
 
