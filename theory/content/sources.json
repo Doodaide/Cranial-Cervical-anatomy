@@ -1,0 +1,27 @@
+{
+  "_comment": "Textbooks the theory pages may cite. A Sources: line in a theory file starts with one of these keys, then the locator. Set confirm to false once the reference below is checked against the book itself.",
+  "last": {
+    "short": "Last's",
+    "ref": "Sinnatamby CS. Last's Anatomy: Regional and Applied. 12th ed. Elsevier; 2011.",
+    "how": "Cited by chapter, part and heading, because the copy used has no page numbers.",
+    "confirm": false
+  },
+  "cunn": {
+    "short": "Cunningham",
+    "ref": "Koshi R, editor. Cunningham's Manual of Practical Anatomy, head and neck volume. 16th ed. 2018.",
+    "how": "Cited by chapter and page.",
+    "pages": [
+      3,
+      273
+    ],
+    "confirm": false
+  },
+  "own": {
+    "short": "Author's notes",
+    "ref": "The site author's own notes and teaching knowledge, added alongside the textbooks, especially for dental relevance.",
+    "how": "Not taken from the textbooks.",
+    "noLocator": true,
+    "book": false,
+    "confirm": false
+  }
+}

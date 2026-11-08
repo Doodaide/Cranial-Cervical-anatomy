@@ -21,6 +21,7 @@
     '<a class="brand" href="' + root + 'index.html">Cranial Cervical Anatomy</a>' +
     '<nav class="site-nav" id="site-nav" aria-label="Main">' +
     '<a href="' + root + 'index.html#atlas">Diagrams</a>' +
+    '<a href="' + root + 'theory/index.html">Theory</a>' +
     '<a href="' + root + 'index.html#resources">Resources</a>' +
     '<a href="' + root + 'index.html#about">About</a>' +
     "</nav>" +
@@ -89,6 +90,7 @@
       "<p>Drawn by Alex He. The diagrams may contain mistakes. If you spot one, " +
       '<a href="mailto:business.alexander.he@gmail.com">email a correction</a>.</p>' +
       '<p><a href="' + root + 'index.html#atlas">Diagrams</a> &nbsp; ' +
+      '<a href="' + root + 'theory/index.html">Theory</a> &nbsp; ' +
       '<a href="' + root + 'index.html#resources">Resources</a> &nbsp; ' +
       '<a href="' + root + 'index.html#about">About</a></p>' +
       "</div></footer>";

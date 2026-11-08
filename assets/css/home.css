@@ -290,3 +290,9 @@
     width: 150px;
   }
 }
+
+.theory-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}

@@ -1,0 +1,337 @@
+# Regional learning objectives, Doctor of Dental Medicine head and neck anatomy (to end of DMD2, Semester 1)
+#
+# This file is the checklist the theory pages are measured against. Do not renumber by hand: item ids
+# (skull.o1, skull.s7.2, ...) are made from the order here, and each theory section lists the ids it covers.
+# Run  python3 tools/build_theory.py --ids  to print every id with its coverage.
+#
+# Format
+#   # <slug> | <number> | <region title>        starts a region (the slug is the theory page name)
+#   ## objectives | structures | clinical       starts a list (regional objectives; regions and structures; clinical relevance)
+#   - item                                      an item; two spaces of indent make it a sub-item
+#   - item || note                              a note shown under the item on the checklist page
+#
+# Wording is the department's, with spelling slips corrected. Three corrections change a word, not just a spelling:
+#   Neck, objective 1: "facial arrangement" -> "fascial arrangement" (the structures listed are fasciae)
+#   Oral cavity, objective 1: "muscles immediately the oral cavity" -> "muscles immediately around the oral cavity"
+#   Cranial cavity: the two arteries and circle of Willis are nested under "blood supply" (the source flattens them)
+
+# skull | 1 | Skull and vertebral column
+## objectives
+- Identify individual bones which make up the skull
+- To understand the articulations of the bones of the skull
+- Have an understanding of the development of the maxilla and mandible
+- Begin to identify structures, foramina and structures traversing them, on the face and base of skull, with particular attention to the mandible and maxilla
+- To understand the layout of the vertebral column, with specific reference to the cervical region
+## structures
+- Location of individual bones and articulations:
+  - frontal, temporal, parietal, occipital, ethmoid, sphenoid
+  - maxilla, zygoma, lacrimal, nasal, inferior concha, palatine, vomer, mandible
+- Mandible in detail
+- Maxilla in detail
+- Major features and foramina of external skull and facial skeleton:
+  - see workshop notes for list || The course list is in workshop notes, which this site does not use as a source. These foramina are covered from Last's and Cunningham's instead, so the lists may differ.
+- Major features and foramina of skull base:
+  - see workshop notes for list || The course list is in workshop notes, which this site does not use as a source. These foramina are covered from Last's and Cunningham's instead, so the lists may differ.
+- Features of typical and atypical cervical vertebra (C1, C2):
+  - articulations and shape of articular facets
+  - anterior arch of C1 and odontoid process of C2
+  - foramen transversarium and vertebral artery
+
+# thorax | 2 | Thorax
+## objectives
+- Describe main anatomical features of trachea and lungs, including understanding of location of inhaled foreign bodies
+- Describe the divisions of the mediastinum with regards to spread of oro-facial infection
+- Understand pleura and root of lung
+- Identify major anatomical features of heart - chambers, valves
+- Describe coronary circulation
+- Describe course of ascending aorta and descending thoracic aorta. Name major branches
+- Locate sympathetic trunk and understand its significance
+- Identify course and distribution of vagus and phrenic nerves
+## structures
+- Layout of thoracic cavity:
+  - diaphragm
+  - aperture of thorax (inlet/outlet)
+  - pleural cavities
+  - mediastinum
+  - chest wall - major features including intercostal space
+- Mediastinum - anterior, superior, middle, posterior:
+  - boundaries
+  - contents
+- Trachea - anatomy and relations
+- Left and right primary bronchi - arrangement and relations
+- Diaphragm - function and innervation
+- Phrenic nerve - roots, distribution and course
+- Vagus nerve within the thorax
+- Pleura - parietal and visceral
+- Pericardium
+- Heart - base, apex:
+  - chambers
+  - valves - aortic, pulmonary, atrio-ventricular (bicuspid and tricuspid)
+  - coronary circulation
+  - innervation
+  - conduction system
+  - fetal circulation, and congenital defects
+- Great vessels around root of the neck
+- Rib 1 and relations
+- Sympathetic trunk
+- Azygos venous system
+- Thoracic duct
+- Oesophagus
+
+# neck | 3 | Neck
+## objectives
+- To understand the fascial arrangement of the neck, including structures related to each layer
+- Identify and understand the bony and cartilaginous components of the neck
+- Describe the anatomy and embryology of the thyroid gland and position of embryological remnants
+- Describe and understand the contents of the triangles of the neck especially the anterior triangle
+- Describe the cervical plexus - cutaneous branches
+- Describe the position of the carotid sheath and the anatomy of its contents
+- Identify ansa cervicalis, the supra- and infra-hyoid muscles and their specific innervations
+- Describe the position and arrangement of lymph nodes in the neck
+## structures
+- Superficial fascia, platysma and branches of the cervical plexus
+- External and anterior jugular veins
+- Investing layer of deep cervical fascia
+- Sternocleidomastoid muscle
+- Trapezius muscle
+- Boundaries and contents of the triangles of the neck
+- Accessory nerve
+- Ansa cervicalis
+- Infra- and supra-hyoid muscles
+- Superficial part of the submandibular salivary gland
+- Anterior and posterior bellies of digastric
+- Position of hypoglossal nerve in the neck
+- Carotid sheath and relations:
+  - internal jugular vein
+  - vagus nerve
+  - common carotid artery
+- Branches of the external carotid artery in neck
+- Thyroid cartilage
+- Cricoid cartilage
+- Trachea
+- Thyroid gland - blood supply and relations
+- Position of oesophagus
+- Pre-vertebral fascia and related structures:
+  - scalenus anterior
+  - phrenic nerve
+  - vertebral artery
+
+# face | 4 | Face and parotid
+## objectives
+- Describe the sensory innervation of regions of the face
+- Describe the extra cranial course of the facial nerve and its branches and relations
+- Identify muscles of the face controlled by the facial nerve - their arrangement and relations
+- Describe the blood supply and venous drainage of the face and locations of these vessels
+- Describe the location of the parotid gland and related anatomy
+- Describe the lymphatic drainage of the face
+## structures
+- Sensory innervation of face in detail:
+  - cutaneous branches of trigeminal nerve - ophthalmic, maxillary and mandibular distributions
+  - branches of the cervical plexus
+- Motor innervation of muscles of the face:
+  - facial nerve - extra cranial course, distribution and branches within the parotid gland and on the face
+  - position of marginal mandibular branch of facial
+- Musculature of face - sphincters and dilators of orifices:
+  - position of modiolus
+  - levators and depressors of the mouth
+  - buccinator in detail
+  - bony attachments to mandible and maxilla
+  - orbicularis oculi
+  - occipito-frontalis
+- Parotid gland:
+  - location: parotid "bed" or parotid fossa
+  - relationship of external carotid artery, retro-mandibular vein and facial nerve within the gland
+  - presence of accessory parotid gland
+  - location of parotid duct
+- Facial artery:
+  - origin, relationship with submandibular salivary gland
+  - course on the face including superior and inferior labial arteries
+  - anastomosis with ophthalmic artery
+- Transverse facial artery
+- Facial vein:
+  - drainage and communication with other veins - ophthalmic and deep facial vein
+
+# tmj | 5 | TMJ, temporalis, masseter
+## objectives
+- To be able to describe the anatomy of the temporomandibular joint complex - static and in function:
+  - position, structures involved, movements, vascular supply and innervation
+- Able to describe attachments, morphology, nerve and blood supply, and actions of:
+  - masseter muscle
+  - lateral pterygoid muscle
+  - temporalis muscle
+## structures
+- Mandible
+- Sphenoid bone
+- Zygomatic bone
+- Temporal bone
+- Temporal fossa - boundaries
+- Temporalis muscle - attachments, actions
+- Temporomandibular joint:
+  - lateral ligament of the TMJ
+  - capsule
+  - articular disc
+  - upper and lower joint spaces
+  - innervation and blood supply
+  - functional anatomy - actions, attachments of lateral pterygoid muscle
+- Auriculotemporal nerve and superficial temporal artery
+- Temporalis fascia and temporo-parietal fascia
+- Temporal branch of the facial nerve
+- Deep temporal nerves and deep temporal arteries
+- Masseter muscle - superficial, intermediate and deep heads, actions, blood supply and nerve supply
+- Lateral pterygoid muscle - attachments and actions of superior and inferior heads
+- Long buccal nerve and artery
+- Zygomaticofacial nerve (V2)
+## clinical
+- Mastication and function of muscles acting upon the joint
+- Temporomandibular joint disorders including myalgia
+- Dislocation of mandible and how to reduce
+- Trauma - condylar fracture, zygomatic arch fracture
+
+# itf | 6 | Infratemporal fossa, V3
+## objectives
+- To be able to describe the boundaries, contents and relationships of structures within the infratemporal fossa
+- To dissect and display the structures at the mandibular foramen
+- Understand the mandibular division of the trigeminal nerve in its entirety
+- Appreciate the variation in structures within the population
+## structures
+- Sphenoid bone
+- Temporal bone
+- Infratemporal fossa - location, boundaries and communications
+- Boundaries of the pterygomandibular space
+- Maxillary artery - 1st and 2nd parts, including:
+  - middle meningeal, accessory meningeal
+  - inferior alveolar
+- All branches of the mandibular division of trigeminal nerve, with special emphasis on:
+  - inferior alveolar
+  - lingual
+  - long buccal
+  - auriculotemporal
+- Motor root of trigeminal
+- Otic ganglion
+- Chorda tympani nerve
+- Lateral pterygoid muscle - attachments, actions:
+  - superior and inferior heads
+- Medial pterygoid muscle - attachments, actions
+- Sphenomandibular ligament
+- Pterygoid venous plexus and communications
+- Deep lobe of the parotid gland
+- Buccinator attachments
+- Buccal fat pad
+## clinical
+- Anaesthesia of the mandibular division of trigeminal nerve
+- Trismus
+- Haematoma
+- Infections and possible spread to adjacent fascial spaces
+- Foreign bodies
+
+# cranial | 7 | Cranial cavity and brain
+## objectives
+- Review features and foramina of cranial cavity
+- Describe parts and gross features of the brain
+- Identify all cranial nerves on the surface of the brain
+- Understand blood supply and venous drainage of the brain
+- Understand the arrangement of dura and dural venous sinuses
+- Describe the communications and contents of the cavernous venous sinus
+## structures
+- Cranial cavity - features and foramina
+- Sphenoid bone
+- Frontal bone
+- Ethmoid bone
+- Temporal bone
+- Cranial cavity:
+  - Anterior and middle cranial fossae
+  - Attachments of dura mater
+  - Dural venous sinuses and venous drainage
+  - general drainage pathways
+  - communications to outside of cranial cavity including infratemporal fossa and face
+  - Cavernous sinus
+  - Course of the middle meningeal artery
+- Brain:
+  - dura mater
+  - hemispheres, general layout
+  - location of somatosensory cortex
+  - post- and pre-central gyri
+  - blood supply: internal carotid, vertebral artery; circle of Willis
+  - cranial nerves 1-12
+## clinical
+- Cranial nerve assessment
+- Trauma: including extradural haemorrhage, subarachnoid haemorrhage
+- Pathology and cavernous sinus thrombosis
+
+# orbit | 8 | Orbit, V1
+## objectives
+- Understand and describe distribution of ophthalmic division of trigeminal nerve
+- Understand and describe distribution of cranial nerves I, II, III, IV and VI
+- Recount the bones of the orbit and describe the orbital walls
+- Describe the actions of the muscles acting upon the globe
+- Understand and describe position, function and innervation of the lacrimal gland
+## structures
+- Bones which make up the orbit
+- Anterior cranial fossa
+- Cavernous sinus
+- Oculomotor nerve
+- Trochlear nerve
+- Ophthalmic division of trigeminal nerve and distributions:
+  - Nasociliary nerve
+  - Frontal
+  - Lacrimal
+- Abducent nerve
+- Optic nerve
+- Internal carotid artery
+- Ophthalmic artery
+- Ophthalmic veins and communications to face
+- Ciliary ganglion, and long and short ciliary nerves
+- Sympathetic and parasympathetic innervation to structures within the orbit
+- Lacrimal gland - location and innervation
+- Nasolacrimal duct
+- Muscles acting on the globe, their actions and innervation:
+  - Recti - lateral, medial, superior, inferior
+  - Superior and inferior oblique muscles
+- Levator palpebrae superioris muscle - action and innervation
+- General anatomy of the globe
+- Pupillary and ciliary muscles and actions
+## clinical
+- Infections - bacterial and viral
+- Trauma
+- Cavernous sinus thrombosis
+- Horner's syndrome
+
+# oral | 9 | Oral cavity
+## objectives
+- Describe the muscles immediately around the oral cavity and their actions
+- Understand the anatomy of the floor of the mouth in detail
+- Describe the tongue, innervations, blood supply
+- Describe the innervation, blood supply and lymphatic drainage of structures of the oral cavity
+## structures
+- Mandible
+- Hyoid bone
+- Sensory innervation to mucosa of the oral cavity
+- Buccinator muscle
+- Pterygomandibular raphe
+- Attachments of superior pharyngeal constrictor
+- Mental foramen, nerve and artery
+- Anatomy of tongue:
+  - intrinsic and extrinsic muscles
+  - styloglossus
+  - palatoglossus
+  - blood and nerve supply in detail
+  - lymphatic drainage - tip of tongue vs elsewhere
+- Mylohyoid muscle
+- Anterior belly of digastric
+- Genioglossus and geniohyoid muscles
+- Hyoglossus muscle
+- Long buccal nerve
+- Lingual nerve
+- Submandibular salivary duct
+- Sublingual veins
+- Hypoglossal nerve
+- Submandibular space
+- Submandibular gland - deep and superficial parts
+- Location of sublingual gland
+- Parotid duct opening
+## clinical
+- All dental procedures including diagnosis
+- Anatomical risks from various surgical procedures such as:
+  - tooth removal, mandibular third molar removal
+  - floor of mouth surgery (e.g. frenectomy, sialolith removal)
+  - mandibular osteotomies
