@@ -15,12 +15,6 @@ Corrections are welcome: business.alexander.he@gmail.com
 | Legacy lab doodles gallery | `legacy_lab.html` |
 | Anki decks | `anki_stuff/anki_decks.html` |
 
-The old per-diagram pages (`arteries.html`, `frontal_skull.html` and so on) still exist as small redirect pages,
-so existing links and bookmarks keep working.
-
-There is no build step. It is plain HTML, CSS and JavaScript that GitHub Pages serves as it is.
-It uses classic scripts, not ES modules, so it also works when opened straight from disk.
-
 ## Folders
 
 ```
