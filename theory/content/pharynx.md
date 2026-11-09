@@ -1,7 +1,7 @@
 ---
 noteId: "5a43a290dc3711f1ac63433f10eaa607"
 tags: []
-slug: "pharynx"
+slug: pharynx
 status: 
 summary: "This section covers the pharynx and its related structures"
 
@@ -107,7 +107,7 @@ The pharyngobasilar fascia is a "suspensory" fascia that sits atop the nasophary
 
 There is a gap between the superior pharyngeal constrictor and the base of the skull filled by this fascia, which is called the sinus of Morgagni. This gap is clinically significant as it is a natural weak point, which allows the migration of nasopharygneal carcinomas and for their invasion into surrounding skull base features. 
 
-The buccopharngeal fascia is commonly confused with the pharyngobasilar fascia but it exists in a separate tissue plane. 
+The buccopharyngeal fascia is commonly confused with the pharyngobasilar fascia but it exists in a separate tissue plane. 
 
 :::clinical Sinus of Morgagni
 The sinus of morgagni refers to the area around the top of the pharynx where numerous structures pass including the auditory tube, tensor/levator palati, and the ascending palatine artery. 
