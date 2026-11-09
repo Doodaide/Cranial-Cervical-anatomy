@@ -75,6 +75,10 @@ Each block ends with `:::`. Clinical and dental boxes need their own `Sources:` 
 ::diagram cervical-vertebrae on=bones,bone-labels | Caption (diagram and layer ids come from data/atlas.js)
 ```
 
+## Folding and search
+
+Each `##` and `###` heading becomes a fold automatically; nothing needs adding to the notes. Every page gets its own search bar, and everything you write is added to the site-wide search the next time the build runs (locally, or through the GitHub Action after you save on github.com).
+
 ## Files in this folder
 
 | File | What it is |

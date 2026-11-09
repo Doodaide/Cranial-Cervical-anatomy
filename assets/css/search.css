@@ -1,0 +1,205 @@
+/* Site-wide search dialog. Loaded on first use by assets/js/search.js. */
+.s-lock {
+  overflow: hidden;
+}
+.s-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(12px, 9vh, 96px) 12px 12px;
+  background: rgb(5 24 36 / 0.5);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.s-overlay[hidden] {
+  display: none;
+}
+.s-dialog {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 44rem);
+  max-height: min(100%, 38rem);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, #ffffff 55%, transparent);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  backdrop-filter: blur(28px) saturate(180%);
+  box-shadow: 0 30px 80px -20px rgb(0 0 0 / 0.55);
+  color: var(--text);
+  font-family: var(--font-ui);
+}
+:root[data-theme="dark"] .s-dialog {
+  border-color: rgb(255 255 255 / 0.12);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .s-dialog {
+    border-color: rgb(255 255 255 / 0.12);
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .s-dialog {
+    background: var(--surface);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+.s-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px 12px 18px;
+  border-bottom: 1px solid var(--line);
+}
+.s-bar__icon {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--text-faint);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.s-input {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font: 400 1.125rem/1.3 var(--font-ui);
+}
+.s-input::placeholder {
+  color: var(--text-faint);
+}
+.s-close {
+  padding: 6px 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-soft);
+  font: 500 0.75rem/1 var(--font-ui);
+  cursor: pointer;
+}
+.s-close:hover {
+  background: var(--sunk);
+}
+.s-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.s-empty {
+  margin: 0;
+  padding: 28px 20px;
+  color: var(--text-soft);
+  font-size: 0.9375rem;
+}
+.s-group {
+  padding: 10px 8px 4px;
+}
+.s-group + .s-group {
+  border-top: 1px solid var(--line);
+}
+.s-group__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 4px 12px 6px;
+  color: var(--text-faint);
+  font: 650 0.75rem/1.3 var(--font-ui);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.s-tag {
+  flex: none;
+  white-space: nowrap;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-size: 0.625rem;
+  letter-spacing: 0.06em;
+}
+.s-tag--topic {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+  color: var(--text-faint);
+}
+.s-opt a {
+  display: block;
+  padding: 9px 12px;
+  border-radius: 12px;
+  color: var(--text);
+  text-decoration: none;
+}
+.s-opt.is-active a {
+  background: var(--sunk);
+  box-shadow: inset 3px 0 0 var(--brand);
+}
+.s-opt__title {
+  display: block;
+  font: 600 0.9375rem/1.3 var(--font-ui);
+}
+.s-snip {
+  display: block;
+  margin-top: 3px;
+  color: var(--text-soft);
+  font: 400 0.8125rem/1.5 var(--font-ui);
+}
+.s-dialog mark {
+  padding: 0 1px;
+  border-radius: 3px;
+  background: color-mix(in srgb, #ffd23f 60%, transparent);
+  color: inherit;
+}
+.s-more {
+  margin: 0;
+  padding: 2px 12px 8px;
+  color: var(--text-faint);
+  font-size: 0.8125rem;
+}
+.s-more--end {
+  padding: 10px 20px 14px;
+}
+.s-status {
+  margin: 0;
+  padding: 6px 20px;
+  border-top: 1px solid var(--line);
+  color: var(--text-faint);
+  font-size: 0.75rem;
+}
+.s-status:empty {
+  display: none;
+}
+.s-foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 18px;
+  margin: 0;
+  padding: 8px 20px 12px;
+  border-top: 1px solid var(--line);
+  color: var(--text-faint);
+  font-size: 0.75rem;
+}
+.s-foot kbd {
+  padding: 1px 5px;
+  border: 1px solid var(--line-strong);
+  border-radius: 5px;
+  font: 500 0.6875rem/1.3 var(--font-ui);
+}
+@media (max-width: 599px) {
+  .s-overlay {
+    padding: 8px;
+  }
+  .s-foot span + span {
+    display: none;
+  }
+}

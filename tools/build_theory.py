@@ -204,7 +204,21 @@ def render_src(pairs, sources):
 
 # ------------------------------------------------------------------ markdown
 
+LIST_LINE = re.compile(r"^\s*([-*+]|\d+[.)])\s+")
+
+
+def blank_before_lists(text):
+    """Markdown only starts a list after a blank line. Insert one, so a list typed straight under a sentence works."""
+    out = []
+    for line in text.split("\n"):
+        if out and LIST_LINE.match(line) and out[-1].strip() and not LIST_LINE.match(out[-1]) and not out[-1].startswith((" ", "\t", "|")):
+            out.append("")
+        out.append(line)
+    return "\n".join(out)
+
+
 def md(text):
+    text = blank_before_lists(text)
     m = markdown.Markdown(extensions=["tables", "sane_lists", "smarty"], output_format="html")
     out = m.convert(text)
     out = out.replace("<table>", '<div class="t-table"><table>').replace("</table>", "</table></div>")
@@ -251,7 +265,10 @@ def read_region_file(path, slug):
         for line in m.group(1).splitlines():
             k, _, v = line.partition(":")
             if k.strip():
-                meta[k.strip()] = v.strip()
+                v = v.strip()
+                if len(v) >= 2 and v[0] == v[-1] and v[0] in "\"'":
+                    v = v[1:-1]  # editors such as Obsidian write status: "draft"
+                meta[k.strip()] = v
         body = text[m.end():]
         offset = text[: m.end()].count("\n")
     else:
@@ -344,6 +361,7 @@ def build_region_body(region, nodes, fname, sources, atlas, known, coverage):
     blocks = []  # validation: every heading block that has prose needs a Sources line
     cur = None
     open_sec = False
+    open_sub = False
     parent = None
 
     def claim(where, iid):
@@ -375,16 +393,21 @@ def build_region_body(region, nodes, fname, sources, atlas, known, coverage):
                 cur["covers"].append((iid, Cover(region.slug, hid, title, status)))
             toc.append((level, hid, clean))
             anchor = '<a class="t-anchor" href="#%s" aria-label="Link to this section">#</a>' % hid
+            if open_sub:
+                out.append("</div></details>")
+                open_sub = False
             if level == 2:
                 if open_sec:
-                    out.append("</section>")
-                out.append('<section class="t-sec" id="%s" aria-labelledby="%s-h">' % (hid, hid))
-                out.append('<h2 id="%s-h">%s %s</h2>' % (hid, esc(clean), anchor))
+                    out.append("</div></details></section>")
+                out.append('<section class="t-sec" id="%s" aria-labelledby="%s-h"><details class="t-fold" open>' % (hid, hid))
+                out.append('<summary class="t-fold__sum"><h2 id="%s-h">%s %s</h2></summary><div class="t-fold__body">' % (hid, esc(clean), anchor))
                 open_sec = True
             else:
                 if not open_sec:
                     err(where, "'###' heading before any '##' heading")
-                out.append('<h3 id="%s">%s %s</h3>' % (hid, esc(clean), anchor))
+                out.append('<details class="t-fold t-fold--sub" id="%s" open>' % hid)
+                out.append('<summary class="t-fold__sum"><h3>%s %s</h3></summary><div class="t-fold__body">' % (esc(clean), anchor))
+                open_sub = True
         elif kind == "md":
             _, text, ln = node
             if need_block("%s:%d" % (fname, ln)):
@@ -448,8 +471,10 @@ def build_region_body(region, nodes, fname, sources, atlas, known, coverage):
             out.append(md("\n".join(text_lines)))
             out.append(render_src(srcs, sources))
             out.append("</aside>")
+    if open_sub:
+        out.append("</div></details>")
     if open_sec:
-        out.append("</section>")
+        out.append("</div></details></section>")
     for b in blocks:
         if b["md"] and not b["src"]:
             err(b["where"], "section '%s' has text but no 'Sources:' line" % b["title"])
@@ -568,6 +593,20 @@ TAIL_TMPL = """
 </html>
 """
 
+FIND_BAR = (
+    '<div class="t-find" role="search" hidden>'
+    '<label class="visually-hidden" for="t-find-input">Search this page</label>'
+    '<svg class="icon t-find__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>'
+    '<input id="t-find-input" type="search" placeholder="Search this page" autocomplete="off" spellcheck="false">'
+    '<span class="t-find__count" aria-live="polite"></span>'
+    '<button class="t-find__btn" type="button" data-find="prev" aria-label="Previous match" disabled>'
+    '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button>'
+    '<button class="t-find__btn" type="button" data-find="next" aria-label="Next match" disabled>'
+    '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>'
+    '<button class="t-find__all" type="button" data-fold="toggle">Collapse all</button>'
+    "</div>"
+)
+
 BACK_ICON = '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>'
 
 
@@ -619,7 +658,7 @@ def render_item(item, ticks):
         )
     else:
         head = '<span class="t-item__label"><span class="t-item__text">%s</span></span>' % text
-    out = ['<li class="t-item" data-id="%s" data-status="%s">' % (item.id, item.status)]
+    out = ['<li class="t-item" id="%s" data-id="%s" data-status="%s">' % (item.id, item.id, item.status)]
     out.append('<div class="t-item__row">%s%s</div>' % (head, tag))
     if note or links:
         out.append('<div class="t-item__meta">%s%s</div>' % (note, links))
@@ -767,6 +806,7 @@ def build_region_page(region, regions, body, toc, used, sources):
         </details>
       </nav>
       <article class="t-body">
+        %(find)s
         %(banner)s
         %(objs)s
         %(body)s
@@ -781,6 +821,7 @@ def build_region_page(region, regions, body, toc, used, sources):
         "title": esc(typo(region.title)),
         "summary": esc(typo(meta.get("summary", ""))),
         "toc": "".join(toc_html),
+        "find": FIND_BAR,
         "banner": banner,
         "objs": obj_box,
         "body": body,
@@ -962,6 +1003,11 @@ def main():
                 body, toc, used = bodies[r.slug]
                 with open(os.path.join(OUT, r.slug + ".html"), "w", encoding="utf-8") as fh:
                     fh.write(build_region_page(r, regions, body, toc, used, sources))
+        for r in regions:
+            if r.slug not in bodies:
+                stale = os.path.join(OUT, r.slug + ".html")
+                if os.path.exists(stale):
+                    os.remove(stale)  # a draft, or a region with no notes, is not published
         with open(os.path.join(OUT, "index.html"), "w", encoding="utf-8") as fh:
             fh.write(build_index_page(regions, sources))
         with open(os.path.join(OUT, "contents.html"), "w", encoding="utf-8") as fh:
@@ -974,6 +1020,11 @@ def main():
         state = "written" if r.meta is not None else ("draft" if r.slug in drafts else "planned")
         print("  %d %-28s %-8s %s" % (r.number, r.title, state, counts_line(f, p, t)))
     print("Total: %s." % counts_line(full, part, tot))
+    if "--check" not in args:
+        import build_search
+
+        n, size = build_search.build(regions)
+        print("Search index: %d entries, %.0f KB." % (n, size / 1024.0))
     for k in sorted(used_all):
         if sources[k].get("confirm"):
             print("NOTE: the reference for '%s' is not confirmed yet (edit theory/content/sources.json)." % k)

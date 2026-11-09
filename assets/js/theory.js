@@ -63,6 +63,231 @@
     spy();
   }
 
+  /* ---- collapsible sections and search on this page ---- */
+  var article = document.querySelector(".t-body");
+  var folds = article ? Array.prototype.slice.call(article.querySelectorAll("details.t-fold")) : [];
+
+  // Open the section (and the sections around it) that holds an element, so it can be seen.
+  function openFor(el) {
+    if (!el) return;
+    var own = el.matches("details") ? el : el.querySelector(":scope > details.t-fold");
+    if (own) own.open = true;
+    for (var d = el.closest("details"); d; d = d.parentElement && d.parentElement.closest("details")) d.open = true;
+  }
+  function targetOf(hash) {
+    if (!hash || hash.length < 2) return null;
+    try {
+      return document.getElementById(decodeURIComponent(hash.slice(1)));
+    } catch (e) {
+      return null;
+    }
+  }
+  if (folds.length) {
+    var startTarget = targetOf(location.hash);
+    if (startTarget) {
+      openFor(startTarget);
+      startTarget.scrollIntoView();
+    }
+    window.addEventListener("hashchange", function () {
+      var t = targetOf(location.hash);
+      if (t) {
+        openFor(t);
+        t.scrollIntoView();
+      }
+    });
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (a) openFor(targetOf(a.getAttribute("href")));
+    });
+  }
+
+  var find = document.querySelector(".t-find");
+  if (find && article) initFind(find);
+
+  function initFind(bar) {
+    bar.hidden = false;
+    var input = bar.querySelector("input");
+    var count = bar.querySelector(".t-find__count");
+    var prev = bar.querySelector('[data-find="prev"]');
+    var next = bar.querySelector('[data-find="next"]');
+    var toggle = bar.querySelector("[data-fold]");
+    var marks = [];
+    var cur = -1;
+    var timer = null;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    /* collapse / expand all */
+    function labelToggle() {
+      var any = folds.some(function (d) {
+        return d.open;
+      });
+      toggle.textContent = any ? "Collapse all" : "Expand all";
+    }
+    toggle.addEventListener("click", function () {
+      var any = folds.some(function (d) {
+        return d.open;
+      });
+      folds.forEach(function (d) {
+        d.open = !any;
+      });
+      labelToggle();
+    });
+    folds.forEach(function (d) {
+      d.addEventListener("toggle", labelToggle);
+    });
+    labelToggle();
+
+    /* highlighting */
+    function norm(s) {
+      return s.replace(/[\u2018\u2019\u02bc]/g, "'").replace(/[\u201c\u201d]/g, '"').toLowerCase();
+    }
+    function clear() {
+      marks.forEach(function (m) {
+        var p = m.parentNode;
+        if (!p) return;
+        p.replaceChild(document.createTextNode(m.textContent), m);
+        p.normalize();
+      });
+      marks = [];
+      cur = -1;
+    }
+    function textNodes() {
+      var out = [];
+      var w = document.createTreeWalker(article, NodeFilter.SHOW_TEXT, {
+        acceptNode: function (n) {
+          if (!n.data.trim()) return NodeFilter.FILTER_REJECT;
+          var p = n.parentNode;
+          if (p.closest(".t-find, .t-anchor, .visually-hidden, script, style")) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+      while (w.nextNode()) out.push(w.currentNode);
+      return out;
+    }
+    function mark(terms) {
+      var nodes = textNodes();
+      nodes.forEach(function (node) {
+        var text = node.data;
+        var low = norm(text);
+        var hits = [];
+        terms.forEach(function (t) {
+          var i = low.indexOf(t);
+          while (i !== -1) {
+            hits.push([i, i + t.length]);
+            i = low.indexOf(t, i + t.length);
+          }
+        });
+        if (!hits.length) return;
+        hits.sort(function (a, b) {
+          return a[0] - b[0] || b[1] - a[1];
+        });
+        var frag = document.createDocumentFragment();
+        var pos = 0;
+        hits.forEach(function (h) {
+          if (h[0] < pos) return;
+          if (h[0] > pos) frag.appendChild(document.createTextNode(text.slice(pos, h[0])));
+          var m = document.createElement("mark");
+          m.className = "t-hit";
+          m.textContent = text.slice(h[0], h[1]);
+          frag.appendChild(m);
+          marks.push(m);
+          pos = h[1];
+        });
+        if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+        node.parentNode.replaceChild(frag, node);
+      });
+    }
+    function go(i, scroll) {
+      if (!marks.length) return;
+      if (cur >= 0 && marks[cur]) marks[cur].classList.remove("is-current");
+      cur = (i + marks.length) % marks.length;
+      var m = marks[cur];
+      m.classList.add("is-current");
+      openFor(m);
+      count.textContent = cur + 1 + " of " + marks.length;
+      if (scroll) m.scrollIntoView({ block: "center", behavior: reduce ? "auto" : "smooth" });
+    }
+    function run(query, fromLink) {
+      clear();
+      var q = norm(query.trim());
+      var has = q.length >= 2;
+      prev.disabled = next.disabled = true;
+      count.textContent = "";
+      if (!has) return;
+      mark([q]);
+      var words = q.split(/\s+/).filter(function (w) {
+        return w.length >= 2;
+      });
+      if (!marks.length && words.length > 1) mark(words); // no exact phrase: show each word
+      if (!marks.length) {
+        count.textContent = "No matches";
+        return;
+      }
+      // sections that hold a match must be open, or the highlight cannot be seen
+      marks.forEach(function (m) {
+        openFor(m);
+      });
+      prev.disabled = next.disabled = false;
+      var start = 0;
+      var t = fromLink ? targetOf(location.hash) : null;
+      if (t) {
+        for (var i = 0; i < marks.length; i++) {
+          if (t.contains(marks[i])) {
+            start = i;
+            break;
+          }
+        }
+      }
+      go(start, !t);
+      if (t) t.scrollIntoView();
+    }
+
+    input.addEventListener("input", function () {
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        run(input.value, false);
+      }, 160);
+    });
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        clearTimeout(timer);
+        if (!marks.length) run(input.value, false);
+        else go(cur + (e.shiftKey ? -1 : 1), true);
+      } else if (e.key === "Escape") {
+        input.value = "";
+        run("", false);
+      }
+    });
+    prev.addEventListener("click", function () {
+      go(cur - 1, true);
+    });
+    next.addEventListener("click", function () {
+      go(cur + 1, true);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "/" || e.ctrlKey || e.metaKey || e.altKey) return;
+      var tag = (e.target.tagName || "").toLowerCase();
+      if (tag === "input" || tag === "textarea" || e.target.isContentEditable) return;
+      e.preventDefault();
+      input.focus();
+      input.select();
+    });
+    window.addEventListener("beforeprint", clear);
+
+    // arriving from the site-wide search: highlight the term that was searched for
+    var q0 = "";
+    try {
+      q0 = new URLSearchParams(location.search).get("q") || "";
+    } catch (e) {
+      q0 = "";
+    }
+    if (q0) {
+      input.value = q0;
+      run(q0, true);
+    }
+  }
+
   window.addEventListener("beforeprint", function () {
     document.querySelectorAll("details").forEach(function (d) {
       d.open = true;
