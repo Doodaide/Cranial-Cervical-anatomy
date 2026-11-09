@@ -1,6 +1,6 @@
 ---
 slug: skull
-summary: How the vertebral column is laid out, then the cervical vertebrae in detail the typical vertebra, the atlas and axis, the joints and ligaments that carry the skull, and the vertebral artery in the transverse foramina. The skull itself is still to come.
+summary: This section covers features of the skull and vertebral column. 
 ---
 
 ## Bones of the cranium and face {#skull-bones covers="skull.o1 skull.s1.1 skull.s1.2"}
@@ -12,12 +12,12 @@ The human skull consists of 28 bones:
 
 The hyoid bone is sometimes counted, bringing that number up to 29. 
 
-These bones are split into cranial (neurocranium) and facial (viscerocranium) bones which protect the brain and form the face respecively. 
+These bones are split into cranial (neurocranium) and facial (viscerocranium) bones which protect the brain and form the face respectively. 
 
 Sources: own
 
 ### Cranial Bones 
-There are 8 crainal bones that form the cranial vault. These bones surround the brain and its meninges, housing vital blood vessels and neural structures. They are summarized below in the following table: 
+There are 8 crainal bones that form the neurocranium. These bones surround the brain and its meninges, housing vital blood vessels and neural structures. They are summarized below in the following table: 
 
 |bone|paired status|
 |-|-|
@@ -46,6 +46,8 @@ The facial bones form the supporting structures and origins of attachments for m
 
 Sources: own
 
+::diagram frontal-skull on=bones,labels| Bones of the skull from an anterior point of view
+
 ## Sutures and joints of the skull {#skull-joints covers="skull.o2"}
 The majority of the joints found in the skull are fibrous joints (synarthroses) or sutures that allow very little movement, providing structural support and protection for the brain and associated vital structures. 
 
@@ -61,6 +63,60 @@ Gomphoses:
 - The anchors which fix the roots of the teeth into their sockets in the maxilla and mandible
 
 Sources: own
+
+## Development of the Maxilla and Mandible {#jaw-development covers="skull.o3"}
+
+The maxilla and mandible are first branchial arch structures formed early in embryonic development. Despite their common origin, they have markedly diferent formations and features which contribute later on in their supplies as well as in developmental pathologies of the maxillofacial region. 
+
+Sources: own
+
+### Maxillary development 
+
+The maxilla begins development
+
+Sources: own
+
+### Mandibular development 
+
+The mandible begins development
+
+Sources: own
+
+## Maxilla in detail {#maxilla-detail covers="skull.s2"}
+
+
+
+## Mandible in detail {#mandible-detail covers="skull.s3"}
+
+
+
+## External Skull features {#external-features covers="skull.s4 skull.o4"}
+
+There are a remarkable number of external features found on the external surface of the skull that must be recognised as they play a significant role in the innervation, supply and formation of the head. This section will focus on dry bony landmarks, but note that there are a significant number of radiographic landmarks as well as palpable landmarks that may be expected in other courses or disciplines. 
+
+Sources: own
+
+### Anterior view 
+
+::diagram frontal-skull on=bones,labels| Bones of the skull from an anterior point of view
+
+### Lateral view 
+
+### Posterior view 
+
+### Superior view 
+
+
+
+## Skull base features {#inferior-features covers="skull.s5"}
+
+### The skull base from a superior point of view 
+
+::diagram superior-skull on=ethmoid-bone sphenoid-bone temporal-bones occipital-bone | Internal view of the skull
+
+### The skull base from an inferior point of view 
+
+::diagram inferior-skull | The skull base
 
 ## Layout of the vertebral column {#vertebral-column covers="skull.o5"}
 

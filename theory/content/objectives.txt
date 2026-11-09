@@ -1,4 +1,4 @@
-# Regional learning objectives, Doctor of Dental Medicine head and neck anatomy (to end of DMD2, Semester 1)
+# Regional learning objectives, Doctor of Dental Medicine head and neck anatomy (full year)
 #
 # This file is the checklist the theory pages are measured against. Do not renumber by hand: item ids
 # (skull.o1, skull.s7.2, ...) are made from the order here, and each theory section lists the ids it covers.
@@ -14,6 +14,8 @@
 #   Neck, objective 1: "facial arrangement" -> "fascial arrangement" (the structures listed are fasciae)
 #   Oral cavity, objective 1: "muscles immediately the oral cavity" -> "muscles immediately around the oral cavity"
 #   Cranial cavity: the two arteries and circle of Willis are nested under "blood supply" (the source flattens them)
+#   Ear: the source nests External ear, Middle ear and Inner ear under blank bullets; they are top-level items here, and "Cochlear" is written "Cochlea"
+#   Nose: the source title "Anatomy Nose, Maxilla and V2" is shortened to "Nose, maxilla and V2"
 
 # skull | 1 | Skull and vertebral column
 ## objectives
@@ -335,3 +337,161 @@
   - tooth removal, mandibular third molar removal
   - floor of mouth surgery (e.g. frenectomy, sialolith removal)
   - mandibular osteotomies
+
+# pharynx | 10 | Pharynx
+## objectives
+- Describe the regions of the pharynx, including their main features
+- Describe the regional innervation of the mucosa of the pharynx
+- Describe the arrangement of the musculature of the pharynx and actions of the constrictors
+- Understand lymphatic drainage of the pharynx
+- Understand and describe the anatomical mechanism of swallowing - phases, muscles, nerves involved
+- Understand the immediate adjacent anatomy of the pharynx, including retropharyngeal space
+## structures
+- Skull:
+  - Pharyngeal tubercle
+  - Medial pterygoid plate and pterygoid hamulus
+  - Groove for pharyngotympanic tube
+- Median raphe
+- Fascia:
+  - Pharyngobasilar
+  - Buccopharyngeal
+- Hyoid bone and stylohyoid ligament
+- Cartilages:
+  - Thyroid
+  - Cricoid
+  - Epiglottis
+- Thyrohyoid membrane
+- Constrictors:
+  - Circular - superior, middle, inferior
+  - Vertical - stylopharyngeus, palatopharyngeus, salpingopharyngeus
+- Pharyngeal recess
+- Piriform recess
+- Epiglottic valleculae and median and lateral glosso-epiglottic folds
+- Oesophagus
+- Glossopharyngeal nerve, vagus nerve
+- Superior cervical ganglion
+- Carotid sheath
+## clinical
+- Foreign body lodgement
+- Swallowing, dysphagia
+- Pharyngeal diverticula
+- Eagle's syndrome
+- Tonsil disease and tonsilloliths
+
+# larynx | 11 | Larynx and tongue
+## objectives
+- Understand and describe the anatomy of the tongue and floor of mouth:
+  - Path of lingual nerve and relations
+  - Submandibular salivary duct
+  - Intrinsic and extrinsic muscles of the tongue
+  - Blood supply, venous drainage and lymphatics
+  - Innervation - sensory and motor
+- Understand and describe the anatomy of the larynx:
+  - Hard tissue framework
+  - Musculature of the larynx
+  - Innervation, blood supply and lymphatics
+## structures
+- Lingual nerve, submandibular salivary gland and duct
+- Sublingual veins
+- Hypoglossal nerve
+- Mylohyoid, genioglossus and geniohyoid muscles
+- Palatoglossus and palatopharyngeus muscles
+- Lingual and facial arteries
+- Epiglottis and epiglottic valleculae
+- Hyoid bone and thyrohyoid membrane
+- Thyroid, cricoid and arytenoid cartilages
+- Superior laryngeal nerve
+- Recurrent laryngeal nerve
+- False and true vocal folds
+- Ventricle of the larynx
+## clinical
+- Speech
+- Swallowing
+- Foreign body - choking
+- Mandibular third molar surgery
+- Lymphatic draining of the tongue
+- Sialoliths and blocked salivary ducts (sialadenitis)
+- Intubation
+- Pathology of the tongue and floor of the mouth
+
+# nose | 12 | Nose, maxilla and V2
+## objectives
+- Understand the bony arrangement of the mid-face specifically the maxilla, nasal cavity and palate
+- Describe the arrangement of the paranasal sinuses and the locations of their openings
+- Describe the anatomy of the palate and its musculature
+- Understand the blood supply, nerve supply and lymphatic drainage of the nose and palate
+- Describe the contents of the pterygopalatine fossa and the distribution of the maxillary nerve
+## structures
+- Bones and features:
+  - maxilla, palatine, ethmoid, vomer, sphenoid, inferior concha
+  - pterygoid canal, foramen rotundum
+  - Nasal septum
+  - Nasal conchae
+  - Superior, middle, and inferior meatus
+- Pterygopalatine fossa:
+  - 3rd part of the maxillary artery and tributaries
+  - maxillary nerve V2, and distribution
+  - pterygopalatine ganglion
+- Hiatus semilunaris and bulla ethmoidalis
+- Maxillary sinus and paranasal sinuses
+- Palatal musculature:
+  - Palatoglossus
+  - Palatopharyngeus
+  - Levator veli palatini
+  - Tensor veli palatini
+  - Musculus uvulae
+## clinical
+- Smell and nasal function
+- Speech
+- Swallowing
+- Trauma
+- Nasal intubation
+- Maxillary tooth removal and minor oral surgery
+- Pathology of the palate and maxilla
+
+# ear | 13 | Ear and temporal bone
+## objectives
+- Describe the main features of the temporal bone
+- Understand the anatomy of the external ear:
+  - cartilaginous and bony components
+  - external acoustic meatus
+  - tympanic membrane & its features
+  - Innervation
+- Understand the functional anatomy of the middle ear:
+  - tympanic cavity - features and boundaries
+  - ossicles and sound wave transmission; associated muscles
+  - pharyngotympanic tube and mastoid
+- Understand the functional anatomy of the inner ear:
+  - Inner ear - bony & membranous labyrinth
+  - cochlea, semicircular canals
+- Describe the contribution of facial, glossopharyngeal and vagus nerves
+- Describe the facial nerve in detail
+- Understand the preganglionics related to the temporal bone
+## structures
+- Temporal bone:
+  - squamous, petromastoid, tympanic and styloid portions
+  - processes and foramina
+- External ear:
+  - features
+  - innervation: cervical plexus, great auricular, auriculotemporal, facial, vagus
+- Middle ear:
+  - ossicles
+  - epitympanic recess, aditus to the tympanic antrum
+  - the antrum and mastoid air cells
+  - pharyngotympanic tube
+  - promontory
+  - round and oval windows on the medial wall of the middle ear
+  - tensor tympani and stapedius muscles & their innervations
+- Inner ear:
+  - Semicircular canals
+  - Cochlea
+  - Vestibulocochlear nerve
+- Geniculate ganglion
+- Nervus intermedius
+- Greater superficial petrosal nerve
+- Lesser superficial petrosal nerve
+- Chorda tympani nerve
+## clinical
+- 1st and 2nd pharyngeal arch syndromes
+- Viral infections, including HSV and Ramsay-Hunt syndrome
+- Hearing and balance

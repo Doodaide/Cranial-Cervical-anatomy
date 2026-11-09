@@ -242,6 +242,7 @@ svg.icon {
   gap: 4px;
 }
 .site-nav a {
+  white-space: nowrap;
   padding: 8px 12px;
   border-radius: var(--radius-m);
   color: var(--header-text-soft);
@@ -296,7 +297,7 @@ svg.icon {
     display: block;
   }
 }
-@media (max-width: 719px) {
+@media (max-width: 899px) {
   .nav-toggle {
     display: inline-grid;
   }

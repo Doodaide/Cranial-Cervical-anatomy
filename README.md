@@ -1,9 +1,3 @@
----
-noteId: "2b791780dbd111f1ac63433f10eaa607"
-tags: []
-
----
-
 # Cranial Cervical Anatomy
 
 A hand-drawn atlas of head and neck anatomy by Alex He, built for anyone learning the region.
@@ -72,6 +66,10 @@ Run `make_thumbs.py` after adding a diagram, changing which layers start switche
 - Headings on theory pages fold. Clicking a heading collapses its text; "Collapse all" and "Expand all" act on the whole page.
 - Site-wide search opens from the magnifier in the header, or with Ctrl/Cmd+K. It searches theory sections, table-of-contents topics, diagrams and Anki decks.
 - The search reads `data/search-index.js`, which `python3 tools/build_theory.py` regenerates (the GitHub Action does this on every push to the sources). Rebuild after changing `data/atlas.js` or the Anki deck list.
+
+## Directory tab
+
+The table of contents page and every theory page carry a "Directory" tab at the top and the bottom. It opens a list of all regions, each linking to that region's aims, structures and clinical topics in the table of contents. It is generated from `theory/content/objectives.txt`, so adding a region there adds it to every Directory.
 
 ## Previewing locally
 

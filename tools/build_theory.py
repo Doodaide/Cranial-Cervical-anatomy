@@ -593,6 +593,31 @@ TAIL_TMPL = """
 </html>
 """
 
+DIR_LISTS = (("objectives", "Aims"), ("structures", "Structures"), ("clinical", "Clinical"))
+
+
+def directory_nav(regions, current=None, where="top"):
+    """The Directory tab: a disclosure listing every region with links to its aims, structures and clinical lists
+    in the table of contents. Printed at the top and bottom of the contents page and of every region page."""
+    items = []
+    for r in regions:
+        links = []
+        for k, label in DIR_LISTS:
+            if r.lists[k]:
+                links.append('<a href="contents.html#%s-%s">%s</a>' % (r.slug, k, label))
+        here = ' aria-current="page"' if r.slug == current else ""
+        items.append(
+            '<li%s><a class="t-dir__region" href="contents.html#%s"%s><span class="t-jump__n">%d</span> %s</a>'
+            '<span class="t-dir__links">%s</span></li>'
+            % (' class="is-current"' if r.slug == current else "", r.slug, here, r.number, esc(typo(r.title)), "".join(links))
+        )
+    return (
+        '<nav class="t-dir t-dir--%s" aria-label="Directory of objectives"><details class="t-dir__d"%s>'
+        '<summary><span class="t-dir__tab">Directory</span><span class="t-dir__hint">Aims, structures and clinical topics for every region</span></summary>'
+        '<ol class="t-dir__list">%s</ol></details></nav>' % (where, " open" if current is None and where == "top" else "", "".join(items))
+    )
+
+
 FIND_BAR = (
     '<div class="t-find" role="search" hidden>'
     '<label class="visually-hidden" for="t-find-input">Search this page</label>'
@@ -683,8 +708,8 @@ def build_contents_page(regions, sources):
             if not r.lists[k]:
                 continue
             lists.append(
-                '<div class="t-group"><h3>%s</h3><ul class="t-list t-list--top">%s</ul></div>'
-                % (LIST_TITLES[k], "".join(render_item(it, True) for it in r.lists[k]))
+                '<div class="t-group" id="%s-%s"><h3>%s</h3><ul class="t-list t-list--top">%s</ul></div>'
+                % (r.slug, k, LIST_TITLES[k], "".join(render_item(it, True) for it in r.lists[k]))
             )
         link = ""
         if r.meta is not None:
@@ -711,14 +736,16 @@ def build_contents_page(regions, sources):
       </div>
     </div>
     <p class="t-overall">%(overall)s across %(nr)d regions.</p>
-    <nav class="t-jump" aria-label="Regions"><ul>%(jump)s</ul></nav>
+    %(dir_top)s
     <div class="t-checklist" id="t-checklist">%(secs)s</div>
+    %(dir_bottom)s
   </main>
 """ % {
         "back": BACK_ICON,
         "overall": counts_line(full, part, total),
         "nr": len(regions),
-        "jump": "".join(jump),
+        "dir_top": directory_nav(regions, None, "top"),
+        "dir_bottom": directory_nav(regions, None, "bottom"),
         "secs": "".join(secs),
     }
     return page(
@@ -798,6 +825,7 @@ def build_region_page(region, regions, body, toc, used, sources):
       <h1>%(title)s</h1>
       <p class="t-head__summary">%(summary)s</p>
     </header>
+    %(dir_top)s
     <div class="t-layout">
       <nav class="t-toc" aria-label="Contents">
         <details class="t-toc__d" open>
@@ -814,8 +842,11 @@ def build_region_page(region, regions, body, toc, used, sources):
         %(pn)s
       </article>
     </div>
+    %(dir_bottom)s
   </main>
 """ % {
+        "dir_top": directory_nav(regions, region.slug, "top"),
+        "dir_bottom": directory_nav(regions, region.slug, "bottom"),
         "back": BACK_ICON,
         "no": region.number,
         "title": esc(typo(region.title)),
@@ -868,7 +899,7 @@ def build_index_page(regions, sources):
   <main id="main" class="container">
     <header class="page-head">
       <h1>Theory</h1>
-      <p>Notes on head and neck anatomy, organised into nine regions, from the skull and vertebral column to the oral cavity. They are written for this site, and each section says which chapter or page of the textbooks it comes from, so you can check it and read further.</p>
+      <p>Notes on head and neck anatomy, organised into %(nr)d regions, from the skull and vertebral column to the ear and temporal bone. They are written for this site, and each section says which chapter or page of the textbooks it comes from, so you can check it and read further.</p>
       <p class="page-head__small">Regions are added one at a time. The table of contents shows what is covered so far.</p>
       <p class="t-head__actions"><a class="btn btn--primary" href="contents.html">Table of contents</a><a class="btn" href="../index.html#atlas">Diagrams</a></p>
     </header>
@@ -886,7 +917,7 @@ def build_index_page(regions, sources):
       <p class="t-about__note">The notes are an aid to study, not a substitute for the textbooks or for the course material.</p>
     </section>
   </main>
-""" % {"rows": "".join(rows), "refs": "".join(refs)}
+""" % {"rows": "".join(rows), "refs": "".join(refs), "nr": len(regions)}
     return page(
         "Theory | Cranial Cervical Anatomy",
         "Head and neck anatomy notes by region, with textbook citations, clinical boxes and links to the diagrams.",

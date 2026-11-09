@@ -23,7 +23,7 @@ from atlas_data import ROOT, load_atlas  # noqa: E402
 
 OUT = os.path.join(ROOT, "data", "search-index.js")
 
-SKIP_CLASSES = {"t-anchor", "src", "t-refs", "t-obj", "t-banner", "t-pn-wrap", "t-find", "t-toc", "visually-hidden"}
+SKIP_CLASSES = {"t-anchor", "src", "t-refs", "t-obj", "t-banner", "t-pn-wrap", "t-find", "t-dir", "t-toc", "visually-hidden"}
 INLINE = {"a", "em", "strong", "b", "i", "span", "mark", "sub", "sup", "abbr"}
 LIST_TITLES = {"objectives": "Aims", "structures": "Regions and structures", "clinical": "Clinical relevance"}
 
