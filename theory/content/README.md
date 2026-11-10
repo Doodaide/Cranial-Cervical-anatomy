@@ -69,7 +69,7 @@ Sources: cunn ch. 2, pp. 5–6; last Ch. 6, Part 19 (A typical cervical vertebra
 :::note Title                           grey box: where sources differ, caveats
 ```
 
-Each block ends with `:::`. Clinical and dental boxes need their own `Sources:` line inside. A diagram link is one line: Found in names found in `atlas.js`
+Each block ends with `:::`. Clinical and dental boxes need their own `Sources:` line inside. A diagram link is one line: Names found in `atlas.js`
 
 ```
 ::diagram cervical-vertebrae on=bones,bone-labels | Caption (diagram and layer ids come from data/atlas.js)

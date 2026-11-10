@@ -1,8 +1,5 @@
 ---
-noteId: "5a43a290dc3711f1ac63433f10eaa607"
-tags: []
 slug: pharynx
-status: 
 summary: "This section covers the pharynx and its related structures"
 
 ---
@@ -27,13 +24,29 @@ The structure itself can be difficult to comprehend as there are lots of critica
 
 Sources: own
 
+## Attachments and location of the pharynx {#attach-and-locate covers="pharynx.s1 pharynx.s2 pharynx.o6"}
+
+The pharynx sits beneath the base of the skull and behind the nasal cavity, oral cavity, and larynx. It sits anteriorly to the prevertebral muscles (and associated fascia). Laterally to the pharynx sit critical neurovascular bundles containing the carotids (common, internal, external), internal jugular vein, vagus nerve, and sympathetic trunk in close proximity. 
+
+Sources: cunn ch. 17 p. 217
+
+### Superior and inferior attachments of the pharynx 
+<!-- Skull attachment, peripheral attachments, inferior attachment-->
+
+
+
+### The median pharyngeal raphe 
+
+<!-- Includes: Pharyngeal tubercle; Medial pterygoid plate and pterygoid hamulus; Groove for pharyngotympanic tube -->
+
+
 ## Superstructure of the pharynx {#superstructure covers="pharynx.o1"}
 
 The pharynx is split into 3 sections: the Nasopharynx, Oropharynx, and Hypopharynx (or Laryngopharynx). These pharyngeal sections are delineated by several anatomic structures. 
 
 Sources: own; cunn ch. 17, pp. 216-217
 
-### The nasopharynx 
+### The nasopharynx {#pharyngeal-recess covers="pharynx.s8"}
 
 The nasopharynx is the section of the pharynx located behind the nasal cavity. Its borders are as follows: 
 
@@ -42,6 +55,8 @@ The nasopharynx is the section of the pharynx located behind the nasal cavity. I
 - Posterior and superior: a continuous curved surface from base of skull to posterior pharyngeal wall 
 - Inferior: the pharyngeal isthmus denoted by the tip of the soft palate
 :::
+
+The contents of the nasopharynx are linked to its functions of moving air from respiration and regulating pressure with the middle ear. 
 
 :::keypoint Contents of nasopharynx (High Yield)
 - pharyngeal tonsil: bulging out in the superior mucous membrane of the roof
@@ -54,15 +69,17 @@ The nasopharynx is the section of the pharynx located behind the nasal cavity. I
 
 Sources: cunn ch.17, pp. 219-222; own
 
-### The oropharynx 
+### The oropharynx {#oropharynx covers="pharynx.s10 pharynx.c5"}
 
-The oropharynx is the section of the pharynx located behind the oral cavity. 
+The oropharynx is the section of the pharynx located behind the oral cavity. It forms the bridge between the oral cavity and the rest of the aerodigestive tract. The borders of the oropharynx are as follows 
 
 :::keypoint Borders of oropharynx (High Yield)
 - Anterior: Oropharyngeal isthmus (palatoglossal folds)
 - Superior: Pharyngeal isthmus (tip of the soft palate)
 - Inferior: Tip of the epiglottis 
 :::
+
+The contents of the oropharynx are as follows
 
 :::keypoint Features of the oropharynx (High Yield)
 - Lingual tonsil 
@@ -73,9 +90,46 @@ The oropharynx is the section of the pharynx located behind the oral cavity.
 - Median/Lateral Glosso-epiglottic Folds 
 :::
 
+<!-- Clinical topic pharynx.c5: Tonsil disease and tonsilloliths  (write it as a :::clinical box inside the section it belongs to) -->
+
 Sources: cunn ch. 17, pp. 222-225; own
 
-### The laryngopharynx 
+### The laryngopharynx {#laryngopharynx covers="pharynx.s9 pharynx.s11 pharynx.c3 pharynx.c1"}
+
+The laryngopharynx is the most inferior pharyngeal portion, lying posterior to the larynx, emptying out like a funnel into the oesophagus. 
+
+:::keypoint Borders of the laryngpharynx (High Yield)
+- Superior: Tip of epiglottis  
+- Inferior: Inferior border of cricoid cartilage 
+- Posterior and Lateral: middle and inferior constrictor muscles 
+- Anterior: laryngeal inlet, piriform recesses. 
+:::
+
+:::keypoint Features of the laryngopharynx 
+- Piriform (or Pyriform) recesses 
+- Killian's dehiscence 
+:::
+
+:::clinical Killian's dehiscence 
+Killian's dehiscence is a triangle shaped area in the inferior pharyngeal constrictor where the oblique fibres of the thyropharyngeal part and the horizontal fibres of the cricopharyngeal part. 
+
+The area between these muscle fibre orientations is very thin, which makes it the primary site for the formation of Zenker's diverticulum, an acquired pharyngeal pouch. 
+
+Key symptoms of this are dysphagia and unpleasant swallowing, trapped food, and halitosis. 
+
+Sources: own
+:::
+<!-- Clinical topic pharynx.c1: Foreign body lodgement  (write it as a :::clinical box inside the section it belongs to) -->
+Sources: cunn ch. 17, pp. 225-226
+
+## Hard tissues associated with the pharynx {#hard-tissues covers="pharynx.s4"}
+
+### Hyoid bone 
+
+### stylohyoid ligament {#stylohyoid-lig covers="pharynx.c4"}
+<!-- Clinical topic pharynx.c4: Eagle's syndrome  (write it as a :::clinical box inside the section it belongs to) -->
+
+### Cartilages associated with the pharynx {#cartilages covers="pharynx.s5"}
 
 ## Pharynx musculature and tissue layers {#musculature covers="pharynx.o3 pharynx.s7"}
 
@@ -93,13 +147,13 @@ Sources: own; cunn ch. 17, pp. 216-217
 
 <!-- Includes: Circular - superior, middle, inferior; Vertical - stylopharyngeus, palatopharyngeus, salpingopharyngeus -->
 
-## Skull {#skull covers="pharynx.s1"}
+### Constrictors {#constrictors covers="pharynx.s7"}
 
-<!-- Includes: Pharyngeal tubercle; Medial pterygoid plate and pterygoid hamulus; Groove for pharyngotympanic tube -->
 
-## Median raphe {#median-raphe covers="pharynx.s2"}
 
-## Fascia {#fascia covers="pharynx.s3"}
+## Fascia and membranes {#fascia covers="pharynx.s3"}
+
+### Fasciae of the pharynx 
 
 A number of important fasciae are attached to and associated with the pharynx. These include the pharyngobasilar, buccopharyngeal (pretracheal), and alar to name a few. 
 
@@ -123,36 +177,21 @@ Sources: own
 
 Sources: own; cunn ch. 17, pp. 216-217
 
-<!-- Includes: Pharyngobasilar; Buccopharyngeal -->
-
-## Hyoid bone and stylohyoid ligament {#hyoid-bone-and-stylohyoid-ligament covers="pharynx.s4"}
-
-## Cartilages {#cartilages covers="pharynx.s5"}
+### Membranes associated with the pharynx {#membrane covers="pharynx.s6"}
 
 <!-- Includes: Thyroid; Cricoid; Epiglottis -->
-
-## Thyrohyoid membrane {#thyrohyoid-membrane covers="pharynx.s6"}
-
-## Constrictors {#constrictors covers="pharynx.s7"}
+Sources: own
 
 
+## Innervation of the pharynx {#pharynx-nerves covers="pharynx.s12 pharynx.s13 pharynx.o2"}
 
-## Pharyngeal recess {#pharyngeal-recess covers="pharynx.s8"}
+## Vasculature of the pharynx {#pharynx-vessels covers="pharynx.s14"}
 
-## Piriform recess {#piriform-recess covers="pharynx.s9"}
+## Lymphatics of the pharynx {#pharynx-lymph covers="pharynx.o4"}
 
-## Epiglottic valleculae and median and lateral glosso-epiglottic folds {#epiglottic-valleculae-and-median-and-lateral-glosso-epiglottic-folds covers="pharynx.s10"}
+## Movement of the pharynx {#pharynx-movement covers="pharynx.o5"}
 
-## Oesophagus {#oesophagus covers="pharynx.s11"}
+### Swallowing {#pharynx-swallowing covers="pharynx.c2"}
 
-## Glossopharyngeal nerve, vagus nerve {#glossopharyngeal-nerve-vagus-nerve covers="pharynx.s12"}
-
-## Superior cervical ganglion {#superior-cervical-ganglion covers="pharynx.s13"}
-
-## Carotid sheath {#carotid-sheath covers="pharynx.s14"}
-
-<!-- Clinical topic pharynx.c1: Foreign body lodgement  (write it as a :::clinical box inside the section it belongs to) -->
 <!-- Clinical topic pharynx.c2: Swallowing, dysphagia  (write it as a :::clinical box inside the section it belongs to) -->
-<!-- Clinical topic pharynx.c3: Pharyngeal diverticula  (write it as a :::clinical box inside the section it belongs to) -->
-<!-- Clinical topic pharynx.c4: Eagle's syndrome  (write it as a :::clinical box inside the section it belongs to) -->
-<!-- Clinical topic pharynx.c5: Tonsil disease and tonsilloliths  (write it as a :::clinical box inside the section it belongs to) -->
+
