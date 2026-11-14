@@ -1,0 +1,187 @@
+/* "Use offline" panel and the update notice. Loaded by assets/js/pwa.js when first needed. */
+.p-lock {
+  overflow: hidden;
+}
+.p-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 210;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(12px, 9vh, 96px) 12px 12px;
+  background: rgb(5 24 36 / 0.5);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.p-overlay[hidden] {
+  display: none;
+}
+.p-dialog {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 36rem);
+  max-height: 100%;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, #ffffff 55%, transparent);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  backdrop-filter: blur(28px) saturate(180%);
+  box-shadow: 0 30px 80px -20px rgb(0 0 0 / 0.55);
+  color: var(--text);
+  font-family: var(--font-ui);
+}
+.p-dialog:focus {
+  outline: none;
+}
+:root[data-theme="dark"] .p-dialog {
+  border-color: rgb(255 255 255 / 0.12);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .p-dialog {
+    border-color: rgb(255 255 255 / 0.12);
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .p-dialog {
+    background: var(--surface);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+.p-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px 12px 20px;
+  border-bottom: 1px solid var(--line);
+}
+.p-title {
+  margin: 0;
+  font: 650 1.125rem/1.3 var(--font-ui);
+}
+.p-close,
+.p-btn {
+  min-height: 40px;
+  padding: 8px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font: 550 0.9375rem/1.2 var(--font-ui);
+  cursor: pointer;
+}
+.p-close:hover,
+.p-btn:hover {
+  background: var(--sunk);
+}
+.p-btn--primary {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: #fff;
+}
+.p-btn--primary:hover {
+  background: color-mix(in srgb, var(--brand) 88%, #000);
+}
+.p-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.p-close:focus-visible,
+.p-btn:focus-visible,
+.pwa-toast button:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+.p-body {
+  overflow-y: auto;
+  padding: 4px 20px 20px;
+}
+.p-sec {
+  padding: 14px 0 6px;
+}
+.p-sec + .p-sec {
+  border-top: 1px solid var(--line);
+}
+.p-sec h3 {
+  margin: 0 0 6px;
+  color: var(--text-soft);
+  font: 650 0.75rem/1.3 var(--font-ui);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.p-status,
+.p-note {
+  margin: 0 0 10px;
+  font: 450 0.9375rem/1.5 var(--font-ui);
+}
+.p-note {
+  color: var(--text-soft);
+  font-size: 0.875rem;
+}
+.p-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.p-row [hidden],
+.p-btn[hidden] {
+  display: none;
+}
+.p-bar {
+  height: 8px;
+  margin: 2px 0 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--sunk);
+}
+.p-bar[hidden] {
+  display: none;
+}
+.p-bar__fill {
+  width: 0;
+  height: 100%;
+  background: var(--brand);
+  transition: width 0.15s linear;
+}
+.pwa-toast {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 220;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: calc(100vw - 32px);
+  padding: 10px 12px 10px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: 0 14px 40px -12px rgb(0 0 0 / 0.4);
+  color: var(--text);
+  font: 500 0.9375rem/1.3 var(--font-ui);
+}
+.pwa-toast button {
+  min-height: 36px;
+  padding: 6px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font: 550 0.875rem/1.2 var(--font-ui);
+  cursor: pointer;
+}
+.pwa-toast__btn {
+  border-color: var(--brand) !important;
+  background: var(--brand) !important;
+  color: #fff !important;
+}
+@media print {
+  .p-overlay,
+  .pwa-toast {
+    display: none;
+  }
+}

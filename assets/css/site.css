@@ -546,3 +546,20 @@ svg.icon {
     scroll-behavior: auto !important;
   }
 }
+
+.site-footer__btn {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.site-footer__btn:hover {
+  color: var(--brand);
+}
+.site-footer__btn[hidden] {
+  display: none;
+}

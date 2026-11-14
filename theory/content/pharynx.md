@@ -145,7 +145,7 @@ Sources: own
 :::clinical Foreign body lodgement in the pharynx
 
 
-Sources: own, 
+Sources: own
 :::
 --->
 

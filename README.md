@@ -71,6 +71,17 @@ Run `make_thumbs.py` after adding a diagram, changing which layers start switche
 
 The table of contents page and every theory page carry a "Directory" tab at the top and the bottom. It opens a list of all regions, each linking to that region's aims, structures and clinical topics in the table of contents. It is generated from `theory/content/objectives.txt`, so adding a region there adds it to every Directory.
 
+## Offline use (installable app)
+
+The site installs as an app and works without a connection. Students open the site address once, then use the browser's Install / Add to Home Screen option (the footer's "Use offline" panel explains it for their device).
+
+- `sw.js` is the service worker. It saves the pages, styles, scripts, data, fonts and small images (about 1.3 MB) on the device, and on each update downloads only the files that changed.
+- `pwa-files.js` is the generated list of files and content hashes it works from. Never edit it. `python3 tools/build_theory.py` rebuilds it, and so does the GitHub Action in `.github/workflows/build-site.yml`. If you change anything on the site and push without rebuilding, installed copies will keep the old file, so run the build (or let the Action run) every time. `python3 tools/build_pwa.py --check` reports whether the list is current.
+- Diagram images are not saved up front. They are saved as students open them, or all at once (about 61 MB) from the footer's "Use offline" panel.
+- `manifest.webmanifest` and `assets/icons/` define the installed app's name and icon. `offline.html` is shown for a page that was never saved.
+- It needs https, which GitHub Pages provides. Opened from disk (`file://`) the site works as before, without offline saving.
+- Keep paths in the site relative (no leading `/`), because the site is served under `/Cranial-Cervical-anatomy/`.
+
 ## Previewing locally
 
 ```

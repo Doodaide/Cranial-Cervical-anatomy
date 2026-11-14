@@ -1063,6 +1063,10 @@ def main():
         old = os.path.join(OUT, "objectives.html")
         if os.path.exists(old):
             os.remove(old)  # the checklist page was renamed contents.html
+    if "--check" not in args:
+        import build_pwa  # last, because it hashes the pages written above
+
+        build_pwa.main([])
     print("Checked only; nothing written." if "--check" in args else "Built into theory/.")
     return 0
 

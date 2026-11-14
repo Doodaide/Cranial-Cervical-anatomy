@@ -132,6 +132,12 @@
   if (mq.addEventListener) mq.addEventListener("change", labelTheme);
   labelTheme();
 
+  /* ---- offline support (service worker and the "Use offline" panel; skipped when not on https) ---- */
+  var pwa = document.createElement("script");
+  pwa.src = root + "assets/js/pwa.js";
+  pwa.async = true;
+  document.head.appendChild(pwa);
+
   /* ---- footer ---- */
   document.addEventListener("DOMContentLoaded", function () {
     var f = document.getElementById("site-footer");
@@ -144,7 +150,8 @@
       '<a href="' + root + 'theory/index.html">Theory</a> &nbsp; ' +
       '<a href="' + root + 'theory/contents.html">Table of contents</a> &nbsp; ' +
       '<a href="' + root + 'index.html#resources">Resources</a> &nbsp; ' +
-      '<a href="' + root + 'index.html#about">About</a></p>' +
+      '<a href="' + root + 'index.html#about">About</a> &nbsp; ' +
+      '<button class="site-footer__btn" type="button" data-offline hidden>Use offline</button></p>' +
       "</div></footer>";
   });
 })();

@@ -1,0 +1,24 @@
+{
+  "id": "./",
+  "name": "Cranial Cervical Anatomy",
+  "short_name": "CC Anatomy",
+  "description": "Head and neck anatomy diagrams and theory notes that work offline.",
+  "lang": "en",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#094260",
+  "theme_color": "#094260",
+  "categories": ["education", "medical"],
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Table of contents", "url": "theory/contents.html" },
+    { "name": "Theory", "url": "theory/index.html" },
+    { "name": "Diagrams", "url": "index.html#atlas" }
+  ]
+}
