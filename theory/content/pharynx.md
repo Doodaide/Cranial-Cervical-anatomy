@@ -44,12 +44,13 @@ A good portion of the superior attachment isn't actually muscular, rather that u
 
 Inferiorly, the pharynx ends at about C6, and is continous with the oesophagus, a muscular tube connecting to the stomach at the level of T10 just below the diaphragm. 
 
-Sources: last ch 6
+Sources: last ch. 6
 
 ### The median pharyngeal raphe 
 
-<!-- Includes: Pharyngeal tubercle; Medial pterygoid plate and pterygoid hamulus; Groove for pharyngotympanic tube -->
+The median pharyngeal raphe is a fibrous 'rope like band' that extends from the base of the skull at the pharyngeal tubercle to the oesophagus (around C6). The superior, middle and inferior constrictors all weave into this fibrous band. It ends at the thyropharyngeal portion of the inferior constrictor. 
 
+Sources: cunn ch. 17, pp. 217
 
 ## Superstructure of the pharynx {#superstructure covers="pharynx.o1"}
 
@@ -101,7 +102,16 @@ The contents of the oropharynx are as follows
 - Median/Lateral Glosso-epiglottic Folds 
 :::
 
-<!-- Clinical topic pharynx.c5: Tonsil disease and tonsilloliths  (write it as a :::clinical box inside the section it belongs to) -->
+:::clinical Tonsil disease and Tonsilloliths
+
+Tonsil diseases range from infections and inflammation of the tonsils (Tonsillitis) to tonsil stones. 
+
+Tonsillitis is a general inflammation of the tonsils, caused by viral or bacterial infections. These appear as red, swollen tonsils (may or may not be purulent) and be accompanied by things like fever, fatigue, dysphagia, and swollen nodes. Can cause peritonsillar abscesses (quinsy) and in severe cases, Lemierre's syndrome. 
+
+Tonsil stones (Tonsilloliths) are small pebble like calcified minerals, food debris, and bacteria that form in the small tonsilar pockets (crypts). They appear as tiny white dots in the tonsil tissue. They may cause halitosis, sore throat or foreign body sensations. A key point is that they may show up in OPGs as small radiopacities around the ascending ramus. 
+
+Sources: own 
+:::
 
 Sources: cunn ch. 17, pp. 222-225; own
 
@@ -130,6 +140,16 @@ Key symptoms of this are dysphagia and unpleasant swallowing, trapped food, and 
 
 Sources: own
 :::
+
+<!--- 
+:::clinical Foreign body lodgement in the pharynx
+
+
+Sources: own, 
+:::
+--->
+
+
 <!-- Clinical topic pharynx.c1: Foreign body lodgement  (write it as a :::clinical box inside the section it belongs to) -->
 Sources: cunn ch. 17, pp. 225-226
 
@@ -190,7 +210,8 @@ Sources: own; cunn ch. 17, pp. 216-217
 
 ### Membranes associated with the pharynx {#membrane covers="pharynx.s6"}
 
-<!-- Includes: Thyroid; Cricoid; Epiglottis -->
+The major membranes associated with the larynx are mucous membranes and the laryngeal membranes. See the "larynx" section for more details. 
+
 Sources: own
 
 
