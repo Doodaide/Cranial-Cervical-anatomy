@@ -24,7 +24,7 @@ The structure itself can be difficult to comprehend as there are lots of critica
 
 Sources: own
 
-## Attachments and location of the pharynx {#attach-and-locate covers="pharynx.s1 pharynx.s2 pharynx.o6"}
+## Attachments and location of the pharynx {#attach-and-locate covers="pharynx.s1 pharynx.s2 pharynx.o6 pharynx.s11"}
 
 The pharynx sits beneath the base of the skull and behind the nasal cavity, oral cavity, and larynx. It sits anteriorly to the prevertebral muscles (and associated fascia). Laterally to the pharynx sit critical neurovascular bundles containing the carotids (common, internal, external), internal jugular vein, vagus nerve, and sympathetic trunk in close proximity. 
 
@@ -33,7 +33,18 @@ Sources: cunn ch. 17 p. 217
 ### Superior and inferior attachments of the pharynx 
 <!-- Skull attachment, peripheral attachments, inferior attachment-->
 
+The pharynx attaches at the base of the skull superiorly via numerous attachment points. These include:
+- the pharyngeal tubercle occipital bone
+- quadrate part of the petrous temporal bone
+- medial pterygoid plates, hamulus (of the sphenoid) and pterygomandibular raphe
+- Cartilaginous portion of the auditory tube 
+- Anterior margin of carotid canal
 
+A good portion of the superior attachment isn't actually muscular, rather that upper border of the superior constrictor leaves a gap that is filled in by the pharyngobasilar fascia, auditory tube, tensor and levator palati muscles, and various other neurovascular components. 
+
+Inferiorly, the pharynx ends at about C6, and is continous with the oesophagus, a muscular tube connecting to the stomach at the level of T10 just below the diaphragm. 
+
+Sources: last ch 6
 
 ### The median pharyngeal raphe 
 
